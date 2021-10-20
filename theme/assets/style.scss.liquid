@@ -1,0 +1,525 @@
+/**********************************
+    *
+    * VARIABLES
+    *
+    **********************************/
+$black: #2c2e34;
+$white: #ffffff;
+$offWhite: #f1f3f4;
+$darkGray: #1c1c1c;
+$lightGray: #848484;
+$blue: #0076bd;
+
+/**********************************
+    *
+    * MIXIN -MEDIA QUERY-
+    *
+    s**********************************/
+$pc: 1920px;
+// $laptop: 1440px;
+$tab: 1024px;
+$sp: 750px;
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+
+// @mixin laptop {
+//   @media (max-width: ($laptop)) {
+//     @content;
+//   }
+// }
+
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+/**********************************
+    *
+    * MIXIN -FUNCTIONS-
+    *
+    **********************************/
+// How to fluid() function
+// $max - value on 1920 screen
+// $min - value on 414 screen
+// $prop - property name
+// e.g.) If the font size is 40px in 1920 screen and 30px in 414 screen in design, it will be @include fluid(40, 30, font-size);
+// For more details, learn about CSS fluid typography
+@mixin fluid(
+  $max,
+  $min,
+  $prop,
+  $min-vw: 375px,
+  $max-vw: 1920px,
+  $fallback: false
+) {
+  $min-no-unit: strip-units($min);
+  $max-no-unit: strip-units($max);
+
+  $min-vw-no-unit: strip-units($min-vw);
+  $max-vw-no-unit: strip-units($max-vw);
+
+  $responsive: calc(
+    #{$min-no-unit}px + (#{$max-no-unit} - #{$min-no-unit}) *
+      ((100vw - #{$min-vw}) / (#{$max-vw-no-unit} - #{$min-vw-no-unit}))
+  );
+
+  @if $fallback {
+    #{$prop}: $fallback;
+  } @else {
+    #{$prop}: (#{$max}px);
+  }
+
+  #{$prop}: $responsive;
+
+  @media screen and (min-width: #{$max-vw}) {
+    #{$prop}: (#{$max}px);
+  }
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@mixin center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-xy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@mixin flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-start-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+@mixin flex-spacebetween-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin flex-spacebetween-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-spacebetween-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@mixin flex-center-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@mixin flex-end-start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@mixin flex-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex-end-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/**********************************
+  *
+  * About
+  *
+  **********************************/
+#about .we-innovate-products {
+  background-color: $offWhite;
+  min-height: 50vh;
+  @include flex-center-center();
+  margin-bottom: 0;
+  position: relative;
+
+  @include sp {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 20vh;
+    background: rgb(241, 243, 244);
+    background: linear-gradient(
+      180deg,
+      rgba(241, 243, 244, 1) 10%,
+      rgba(241, 243, 244, 0) 75%,
+      rgba(241, 243, 244, 0) 90%
+    );
+    position: absolute;
+    left: 0;
+    bottom: -20vh;
+  }
+
+  .container {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > * {
+    flex-basis: 50%;
+  }
+
+  .container > .left-column {
+    padding-right: 5%;
+
+    @include sp {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .container > .right-column {
+    padding-left: 5%;
+
+    @include sp {
+      padding-left: 0;
+    }
+  }
+
+  .container > .right-column p {
+    color: $lightGray;
+    @include fluid(50, 25, margin-bottom);
+  }
+}
+
+#about .growth-is-all {
+  .container {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > * {
+    flex-basis: 50%;
+  }
+
+  .container > .left-column {
+    padding-right: 5%;
+
+    @include sp {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .container > .right-column {
+    padding-left: 5%;
+
+    @include sp {
+      padding-left: 0;
+    }
+  }
+
+  .container > .right-column p {
+    color: $lightGray;
+  }
+
+  .container > .right-column p:first-child {
+    @include fluid(100, 40, margin-bottom);
+  }
+}
+
+#about .newsletter-banner {
+  background-image: linear-gradient(115deg, #78a6c3 1%, #0076bd 55%);
+  @include fluid(100, 40, padding-top);
+  @include fluid(100, 40, padding-bottom);
+
+  .container {
+    max-width: 880px;
+    width: 80%;
+    margin: auto;
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  .container h3 {
+    font-size: 50px;
+    @include fluid(50, 20, font-size);
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    color: $white;
+    @include fluid(50, 20, margin-bottom);
+  }
+}
+
+#about .team {
+  .container {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > .left-column {
+    flex-basis: 25%;
+
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
+  .container > .left-column h2 {
+    @include fluid(70, 28, font-size);
+    font-weight: bold;
+    line-height: 1.14;
+    color: $black;
+  }
+
+  .container > .right-column {
+    flex-basis: 75%;
+  }
+
+  .container > .right-column ul {
+    @include flex-spacebetween-start();
+    flex-wrap: wrap;
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > .right-column ul li {
+    flex-basis: 31.3333%;
+    padding-right: 1%;
+    padding-left: 1%;
+    @include fluid(80, 40, margin-bottom);
+
+    @include sp {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .container > .right-column ul li .photo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .container > .right-column ul li .name {
+    @include fluid(30, 20, font-size);
+    font-weight: 600;
+    color: $black;
+    margin-bottom: 5px;
+  }
+
+  .container > .right-column ul li .job-title {
+    @include fluid(18, 15, font-size);
+    font-weight: bold;
+    letter-spacing: 0.45px;
+    color: $lightGray;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .container > .right-column ul li .bio {
+    @include fluid(16, 14, font-size);
+    line-height: 1.63;
+    color: $black;
+    margin-bottom: 15px;
+  }
+
+  .container > .right-column ul li .social-media {
+    @include flex-start-center();
+    flex-wrap: wrap;
+  }
+
+  .container > .right-column ul li .social-media a {
+    margin-right: 15px;
+    width: 25px;
+    @include flex-center-center();
+  }
+}
+
+#about .our-journey {
+  background-image: url('{{ "running-car-bg.jpg" | asset_url }}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 8% 0;
+  position: relative;
+
+  @include sp {
+    background-image: none;
+    background-color: #edeff0;
+    padding: 80px 0 40px;
+    display: block;
+    margin-bottom: 0;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 45%;
+    min-width: 650px;
+    height: 100%;
+    background: rgb(237, 239, 240);
+    background: linear-gradient(
+      90deg,
+      rgba(237, 239, 240, 1) 80%,
+      rgba(237, 239, 240, 0.5) 85%,
+      rgba(237, 239, 240, 0) 90%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    @include sp {
+      width: 100%;
+      min-width: 0;
+      height: 20vh;
+      background: linear-gradient(
+        180deg,
+        rgba(237, 239, 240, 1) 15%,
+        rgba(237, 239, 240, 0.5) 30%,
+        rgba(237, 239, 240, 0) 45%
+      );
+      top: unset;
+      bottom: -20vh;
+      z-index: 3;
+    }
+  }
+
+  .page-width {
+    width: 100%;
+    z-index: 1;
+
+    @include sp {
+      width: auto;
+    }
+  }
+
+  .container {
+    width: 40%;
+    max-width: 400px;
+    margin-right: auto;
+    height: 100%;
+    @include flex-center-center();
+    flex-wrap: wrap;
+
+    @include tab {
+      width: 60%;
+    }
+
+    @include sp {
+      width: 100%;
+      max-width: unset;
+    }
+  }
+
+  .container > * {
+    flex-basis: 100%;
+  }
+
+  .container h2 {
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .container p {
+    @include fluid(20, 16, font-size);
+    line-height: 1.5;
+    color: $black;
+  }
+}
+
+#about .our-journey-mb-bg-image {
+  @include fluid(150, 75, margin-bottom);
+}
+
+#about .explore {
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+
+    @include sp {
+      width: 100%;
+    }
+  }
+  p {
+    @include fluid(40, 24, font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    color: $black;
+    @include fluid(60, 30, margin-bottom);
+  }
+}

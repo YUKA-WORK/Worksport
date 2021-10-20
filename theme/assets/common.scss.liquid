@@ -1,0 +1,327 @@
+/**********************************
+  *
+  * CUSTOM STYLES FOR base.css
+  *
+  **********************************/
+.page-width {
+  background-color: #ffff0021;
+  padding: 0 3rem !important;
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1024px) {
+  .page-width {
+    padding: 0 5rem !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .page-width {
+    padding: 0 5rem !important;
+  }
+}
+
+/**********************************
+  *
+  * VARIABLES
+  *
+  **********************************/
+$black: #2c2e34;
+$white: #ffffff;
+$offWhite: #f1f3f4;
+$darkGray: #1c1c1c;
+$lightGray: #848484;
+$blue: #0076bd;
+
+/**********************************
+  *
+  * MIXIN -MEDIA QUERY-
+  *
+  s**********************************/
+$pc: 1920px;
+// $laptop: 1440px;
+$tab: 1024px;
+$sp: 750px;
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+
+// @mixin laptop {
+//   @media (max-width: ($laptop)) {
+//     @content;
+//   }
+// }
+
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+/**********************************
+  *
+  * MIXIN -FUNCTIONS-
+  *
+  **********************************/
+// How to fluid() function
+// $max - value on 1920 screen
+// $min - value on 414 screen
+// $prop - property name
+// e.g.) If the font size is 40px in 1920 screen and 30px in 414 screen in design, it will be @include fluid(40, 30, font-size);
+// For more details, learn about CSS fluid typography
+@mixin fluid(
+  $max,
+  $min,
+  $prop,
+  $min-vw: 375px,
+  $max-vw: 1920px,
+  $fallback: false
+) {
+  $min-no-unit: strip-units($min);
+  $max-no-unit: strip-units($max);
+
+  $min-vw-no-unit: strip-units($min-vw);
+  $max-vw-no-unit: strip-units($max-vw);
+
+  $responsive: calc(
+    #{$min-no-unit}px + (#{$max-no-unit} - #{$min-no-unit}) *
+      ((100vw - #{$min-vw}) / (#{$max-vw-no-unit} - #{$min-vw-no-unit}))
+  );
+
+  @if $fallback {
+    #{$prop}: $fallback;
+  } @else {
+    #{$prop}: (#{$max}px);
+  }
+
+  #{$prop}: $responsive;
+
+  @media screen and (min-width: #{$max-vw}) {
+    #{$prop}: (#{$max}px);
+  }
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@mixin center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-xy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@mixin flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-start-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+@mixin flex-spacebetween-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin flex-spacebetween-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-spacebetween-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@mixin flex-center-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@mixin flex-end-start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@mixin flex-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex-end-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/**********************************
+  *
+  * COMMON
+  *
+  **********************************/
+body {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif !important;
+  @include fluid(18, 16, font-size);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1.5;
+  text-align: left;
+  color: $black;
+  overflow-x: hidden;
+}
+
+body a {
+  transition: all 0.3s ease;
+}
+
+body a:hover {
+  transition: all 0.3s ease;
+}
+
+.light-gray {
+  color: #848484;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: $lightGray !important;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: $lightGray !important;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: $lightGray !important;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $lightGray !important;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $lightGray !important;
+}
+
+::placeholder {
+  /* Most modern browsers support this now. */
+  color: $lightGray !important;
+}
+
+.pc-class {
+  display: block !important;
+
+  @include sp {
+    display: none !important;
+  }
+}
+
+.sp-class {
+  display: none !important;
+
+  @include sp {
+    display: block !important;
+  }
+}
+
+/**********************************
+  *
+  * BUTTON
+  *
+  **********************************/
+button:focus {
+  outline: 0;
+}
+
+/**********************************
+  *
+  * HEADING
+  *
+  **********************************/
+.common-h2-title-middle {
+  line-height: 1.33;
+  letter-spacing: normal;
+  font-weight: bold;
+  color: $black;
+  @include fluid(60, 24, font-size);
+}
+
+.common-h2-title-large {
+  line-height: 1.22;
+  letter-spacing: normal;
+  font-weight: bold;
+  color: $black;
+  @include fluid(90, 36, font-size);
+}
+
+/**********************************
+  *
+  * SECTION
+  *
+  **********************************/
+.section {
+  width: 100%;
+  @include fluid(150, 75, margin-bottom);
+}
+
+.page-full {
+  width: 100%;
+  max-width: 100%;
+}
