@@ -876,3 +876,98 @@ $sp: 750px;
     color: $black;
   }
 }
+
+/**********************************
+  *
+  * Contact
+  *
+  **********************************/
+#contact .contact-form {
+  @include fluid(200, 100, margin-top);
+
+  .container {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > * {
+    flex-basis: 50%;
+  }
+
+  .container > .left-column {
+    padding-right: 5%;
+
+    @include sp {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .container > .right-column {
+    padding-left: 5%;
+
+    @include sp {
+      padding-left: 0;
+    }
+  }
+
+  .container > .left-column .common-h2-title-middle {
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .container > .left-column p {
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    color: $lightGray;
+    @include fluid(100, 50, margin-bottom);
+  }
+
+  .container > .left-column ul {
+    @include flex-spacebetween-start();
+    flex-wrap: wrap;
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > .left-column ul li {
+    flex-basis: 50%;
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .container > .left-column ul li:nth-child(odd) {
+    padding-right: 2%;
+
+    @include sp {
+      padding-right: 0;
+    }
+  }
+
+  .container > .left-column ul li:nth-child(even) {
+    padding-left: 2%;
+
+    @include sp {
+      padding-left: 0;
+    }
+  }
+
+  .container > .left-column ul li .contact-title {
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
+    line-height: 1;
+    color: $black;
+    @include fluid(30, 20, margin-bottom);
+  }
+
+  .container > .left-column ul li .contact-detail,
+  .container > .left-column ul li .contact-detail a {
+    font-size: 16px;
+    line-height: 1.6;
+    color: $black;
+  }
+}
