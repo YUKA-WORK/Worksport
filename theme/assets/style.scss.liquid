@@ -387,7 +387,7 @@ $sp: 750px;
   }
 
   .container > .right-column ul li .bio {
-    @include fluid(16, 14, font-size);
+    font-size: 16px;
     line-height: 1.63;
     color: $black;
     margin-bottom: 15px;
@@ -696,5 +696,183 @@ $sp: 750px;
     line-height: 1.3;
     color: $black;
     margin-top: 10px;
+  }
+}
+
+/**********************************
+  *
+  * Article
+  *
+  **********************************/
+#article .article {
+  @include fluid(200, 100, margin-top);
+  @include fluid(30, 15, margin-bottom);
+
+  .page-width {
+    max-width: 880px;
+    border-bottom: solid 2px #84848433;
+  }
+
+  .article-header {
+    border-bottom: solid 2px #84848433;
+    @include fluid(50, 25, padding-bottom);
+    @include fluid(40, 20, margin-bottom);
+  }
+
+  .article-header .article-date {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    color: $lightGray;
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .article-header .article-title {
+    @include fluid(50, 30, font-size);
+    font-weight: bold;
+    line-height: 1.4;
+    color: $black;
+  }
+
+  .social-sharing {
+    @include flex-start-center();
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .social-sharing h4 {
+    font-size: 16px;
+    width: auto;
+    @include fluid(30, 15, margin-right);
+    font-weight: 500;
+    color: $black;
+  }
+
+  .social-sharing ul {
+    @include flex-start-center();
+  }
+
+  .social-sharing ul li {
+    @include fluid(25, 12.5, margin-right);
+  }
+
+  .social-sharing ul li a {
+    @include flex-center-center();
+  }
+
+  .social-sharing ul li img {
+    @include fluid(30, 20, height);
+    width: auto;
+    max-width: auto;
+  }
+
+  .article-content {
+    @include fluid(50, 25, padding-bottom);
+  }
+
+  .article-content .article-image {
+    @include fluid(300, 200, width);
+    @include fluid(50, 25, margin-right);
+    @include fluid(30, 15, margin-bottom);
+    float: left;
+
+    @include sp {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  .article-content .article-body {
+    font-size: 16px;
+    line-height: 1.63;
+  }
+}
+
+#article .recent-posts {
+  .page-width {
+    max-width: 880px;
+  }
+
+  .title-outer {
+    @include flex-spacebetween-center();
+    @include fluid(30, 15, margin-bottom);
+  }
+
+  .title-outer h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
+  }
+
+  .title-outer .view-all {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0076bd;
+  }
+
+  ul {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  ul li {
+    flex-basis: 33.3333%;
+
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
+  ul li:first-child {
+    margin-right: 3%;
+
+    @include sp {
+      margin-right: 0;
+    }
+  }
+  ul li:nth-child(2) {
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+
+    @include sp {
+      margin-right: 0%;
+      margin-left: 0;
+    }
+  }
+  ul li:last-child {
+    margin-left: 3%;
+
+    @include sp {
+      margin-left: 0;
+    }
+  }
+
+  ul li img {
+    @include fluid(20, 10, margin-bottom);
+    width: 100%;
+    @include fluid(260, 130, height);
+    object-fit: cover;
+
+    @include sp {
+      width: 100%;
+      height: 30vh;
+    }
+  }
+
+  ul li .date {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    color: $lightGray;
+    margin-bottom: 10px;
+  }
+
+  ul li .title-outer h4 {
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    color: $black;
   }
 }

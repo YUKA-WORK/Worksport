@@ -1,0 +1,15 @@
+<ul>
+    {% for article in blogs["news"].articles limit: 3 %}
+        <li>
+            <a class="" href="{{ article.url }}">
+                <img src="{{ article.image.src | img_url: 'master' }}" alt="">
+                <div class="date">
+                    {{ article.published_at }}
+                </div>
+                <h4>
+                    {{ article.title }}
+                </h4>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
