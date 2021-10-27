@@ -2,6 +2,82 @@
   "sections": {
     "about": {
       "type": "about-page",
+      "blocks": {
+        "ea852989-f4e5-41fb-b153-9985cd7afd83": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/steven.jpg",
+            "name": "Steven Rossi",
+            "job_title": "CEO, Chairman of the Board",
+            "bio": "For the past ten years CEO Steven Rossi has been developing companies in the automotive industry. Mr. Rossi brings the ability to create a vision, mastermind innovative products and lead his team in the execution of the ensuing strategy. This was clearly demonstrated when his previous company in the auto parts and recycling business was acquired. While he has unquestioned experience and knowledge in the automotive industry he has also acquired the skills to be successful in any industry.",
+            "linkedin_url": "https:\/\/www.linkedin.com\/",
+            "twitter_url": "https:\/\/twitter.com\/"
+          }
+        },
+        "21f4d343-f07b-46e0-b0d5-f4ea033c54b5": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/amb.jpg",
+            "name": "Amb. Ned L. Siegel",
+            "job_title": "Independent Director",
+            "bio": "Ambassador Ned L. Siegel, (Ret.) is the president of The Siegel Group, a multi-disciplined international business management advisory firm. From October 2007 until January 2009, he served as the United States Ambassador to the Commonwealth of The Bahamas and he served on the Board of Directors of the Overseas Private Investment Corporation (OPIC) from 2003-2007.",
+            "linkedin_url": "",
+            "twitter_url": ""
+          }
+        },
+        "f9d8fdfe-5a9f-473a-b6d1-13fd5e8da278": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lorenzo.jpg",
+            "name": "Lorenzo H. Rossi",
+            "job_title": "Director",
+            "bio": "Over 25 years management experience in technology and founder of the very first E-learning Academy. Served as an Executive Director with Neotel which traded on the TSX.  Managed a budget of 300 million dollars for the York Catholic District School Board.",
+            "linkedin_url": "",
+            "twitter_url": ""
+          }
+        },
+        "8b9caac3-039d-42f1-abdf-da7b23612aea": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/craig.jpg",
+            "name": "Craig Loverock",
+            "job_title": "Independent Director",
+            "bio": "A Chartered Professional Accountant with over 24 years’ experience in accounting and finance roles in Canada, the United States and England with both public and private companies.",
+            "linkedin_url": "",
+            "twitter_url": ""
+          }
+        },
+        "48566d55-4b2c-4614-97b6-d7d3d7cd7efe": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/michael.jpg",
+            "name": "Micheal Johnston",
+            "job_title": "CFO",
+            "bio": "Specialized in public company operations, financial statements,  analysis, and IFRS. Holds both the Chartered Professional Accountant (Canada) and Certified Public Accountant (United States) designations. Therefore a great value for our team.",
+            "linkedin_url": "",
+            "twitter_url": ""
+          }
+        },
+        "85cf35a3-2e50-43ed-b7c5-8a6b39d8c5b4": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bill.jpg",
+            "name": "Bill Caragol",
+            "job_title": "Independent Director",
+            "bio": "Over 30 years of executive and director experience with growth stage technology companies, both publicly traded and private companies. As the Managing Director of Quidem LLC, Bill focuses on business strategy, business development, mergers, acquisitions, and sales of businesses.",
+            "linkedin_url": "",
+            "twitter_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "ea852989-f4e5-41fb-b153-9985cd7afd83",
+        "21f4d343-f07b-46e0-b0d5-f4ea033c54b5",
+        "f9d8fdfe-5a9f-473a-b6d1-13fd5e8da278",
+        "8b9caac3-039d-42f1-abdf-da7b23612aea",
+        "48566d55-4b2c-4614-97b6-d7d3d7cd7efe",
+        "85cf35a3-2e50-43ed-b7c5-8a6b39d8c5b4"
+      ],
       "settings": {}
     }
   },

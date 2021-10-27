@@ -378,7 +378,7 @@ $sp: 750px;
   }
 
   .container > .right-column ul li .job-title {
-    @include fluid(18, 15, font-size);
+    @include fluid(18, 16, font-size);
     font-weight: bold;
     letter-spacing: 0.45px;
     color: $lightGray;
@@ -532,7 +532,7 @@ $sp: 750px;
 #blog .blog-posts {
   @include fluid(200, 100, margin-top);
 
-  .common-h2-title-middle {
+  .common-h-title-middle {
     text-align: center;
     @include fluid(100, 50, margin-bottom);
   }
@@ -914,7 +914,7 @@ $sp: 750px;
     }
   }
 
-  .container > .left-column .common-h2-title-middle {
+  .container > .left-column .common-h-title-middle {
     @include fluid(50, 25, margin-bottom);
   }
 
@@ -969,5 +969,138 @@ $sp: 750px;
     font-size: 16px;
     line-height: 1.6;
     color: $black;
+  }
+}
+
+/**********************************
+  *
+  * Support
+  *
+  **********************************/
+#support .here-to-help {
+  @include fluid(200, 100, margin-top);
+
+  .container {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > * {
+    flex-basis: 50%;
+  }
+
+  .container > .left-column {
+    padding-right: 5%;
+
+    @include sp {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .container > .right-column {
+    padding-left: 5%;
+
+    @include sp {
+      padding-left: 0;
+    }
+  }
+
+  .container > .left-column .common-h-title-middle {
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .container > .left-column p {
+    font-size: 16px;
+    font-weight: 16;
+    line-height: 1.5;
+    color: $black;
+    @include fluid(100, 50, margin-bottom);
+  }
+
+  .container > .left-column .see-faq {
+    @include flex-spacebetween-start();
+    flex-wrap: wrap;
+
+    @include tab() {
+      display: block;
+    }
+  }
+
+  .container > .left-column .see-faq > * {
+    flex-basis: 50%;
+  }
+
+  .container > .left-column .see-faq .text {
+    padding-right: 2%;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.63;
+    color: $black;
+
+    @include tab() {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .container > .left-column .see-faq .button {
+    padding-left: 2%;
+
+    @include tab() {
+      padding-left: 0;
+    }
+  }
+
+  .container > .right-column {
+    ul li {
+      @include fluid(50, 25, margin-bottom);
+    }
+
+    ul li .contact-title {
+      @include fluid(18, 16, font-size);
+      font-weight: 500;
+      line-height: 1.56;
+      color: $black;
+      @include fluid(30, 15, margin-bottom);
+    }
+
+    ul li .contact-detail a {
+      @include fluid(30, 20, font-size);
+      font-weight: 600;
+      color: $black;
+    }
+  }
+}
+
+#support .support-form {
+  .common-h-title-small {
+    @include fluid(100, 50, margin-bottom);
+  }
+}
+
+#support .contact-us {
+  .common-h-title-small {
+    @include fluid(50, 25, margin-bottom);
+    text-align: center;
+  }
+
+  p {
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    color: $lightGray;
+    @include fluid(40, 20, margin-bottom);
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .button-wrapper {
+    @include flex-center-center();
   }
 }

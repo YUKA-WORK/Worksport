@@ -295,15 +295,22 @@ button:focus {
   * HEADING
   *
   **********************************/
-.common-h2-title-middle {
-  line-height: 1.33;
+.common-h-title-small {
+  color: $black;
+  @include fluid(40, 24, font-size);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.common-h-title-middle {
+  line-height: 1.3;
   letter-spacing: normal;
   font-weight: bold;
   color: $black;
-  @include fluid(60, 24, font-size);
+  @include fluid(60, 28, font-size);
 }
 
-.common-h2-title-large {
+.common-h-title-large {
   line-height: 1.22;
   letter-spacing: -1px;
   font-weight: bold;
@@ -324,4 +331,19 @@ button:focus {
 .page-full {
   width: 100%;
   max-width: 100%;
+}
+
+/**********************************
+  *
+  * Others
+  *
+  **********************************/
+.hover-opacity {
+  opacity: 1;
+  transition: 0.3s opacity ease;
+}
+
+.hover-opacity:hover {
+  opacity: 0.8;
+  transition: 0.3s opacity ease;
 }
