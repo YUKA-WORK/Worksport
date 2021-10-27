@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210" height="210" viewBox="0 0 210 210">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="124" height="124" viewBox="0 0 124 124">
   <defs>
-    <filter id="Rectangle_497" x="0" y="0" width="210" height="210" filterUnits="userSpaceOnUse">
+    <clipPath id="clip-path">
+      <rect id="Rectangle_604" data-name="Rectangle 604" width="124" height="124" transform="translate(3242 8801)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Rectangle_498" x="-43" y="-43" width="210" height="210" filterUnits="userSpaceOnUse">
       <feOffset input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="15" result="blur"/>
       <feFlood flood-opacity="0.161"/>
@@ -8,14 +11,20 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="quality-guaranteed-icon" transform="translate(-855 -6766)">
-    <g transform="matrix(1, 0, 0, 1, 855, 6766)" filter="url(#Rectangle_497)">
-      <g id="Rectangle_497-2" data-name="Rectangle 497" transform="translate(45 45)" fill="none" stroke="#fff" stroke-width="3">
-        <rect width="120" height="120" rx="20" stroke="none"/>
-        <rect x="1.5" y="1.5" width="117" height="117" rx="18.5" fill="none"/>
+  <g id="quality-guaranteed-icon" transform="translate(-3311 -8940)">
+    <g id="warranty-icon" transform="translate(69 139)">
+      <g id="Mask_Group_14" data-name="Mask Group 14" clip-path="url(#clip-path)">
+        <g id="free-delivery-icon" transform="translate(2824 1992)">
+          <g transform="matrix(1, 0, 0, 1, 418, 6809)" filter="url(#Rectangle_498)">
+            <g id="Rectangle_498-2" data-name="Rectangle 498" transform="translate(2 2)" fill="none" stroke="#fff" stroke-width="3">
+              <rect width="120" height="120" rx="20" stroke="none"/>
+              <rect x="1.5" y="1.5" width="117" height="117" rx="18.5" fill="none"/>
+            </g>
+          </g>
+        </g>
       </g>
     </g>
-    <g id="Group_41" data-name="Group 41" transform="translate(172.944 6455.396)">
+    <g id="Group_1630" data-name="Group 1630" transform="translate(2582.944 8586.396)">
       <g id="Group_38" data-name="Group 38" transform="translate(773.007 398.712)">
         <g id="Group_37" data-name="Group 37" transform="translate(0 0)">
           <path id="Path_62" data-name="Path 62" d="M855.005,546.54a22.025,22.025,0,1,1,22.025-22.025A22.05,22.05,0,0,1,855.005,546.54Zm0-40.708a18.684,18.684,0,1,0,18.684,18.684A18.7,18.7,0,0,0,855.005,505.832Z" transform="translate(-832.981 -502.491)" fill="#fff"/>

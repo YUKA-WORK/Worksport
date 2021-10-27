@@ -1,11 +1,11 @@
 {
   "sections": {
-    "form": {
+    "main": {
       "type": "support",
       "settings": {}
     }
   },
   "order": [
-    "form"
+    "main"
   ]
 }

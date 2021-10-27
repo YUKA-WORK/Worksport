@@ -184,6 +184,269 @@ $sp: 750px;
 
 /**********************************
   *
+  * Home
+  *
+  **********************************/
+#index .find-brand {
+  @include fluid(120, 60, margin-top);
+
+  .common-h-title-small {
+    @include fluid(100, 50, margin-bottom);
+    text-align: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .small-text {
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
+    text-align: center;
+    color: $lightGray;
+    text-transform: uppercase;
+    @include fluid(50, 25, margin-bottom);
+  }
+}
+
+#index .features {
+  .container {
+    @include flex-spacebetween-start();
+    align-items: stretch;
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > * {
+    flex-basis: 50%;
+  }
+
+  .container > .left-column {
+    background-color: $offWhite;
+  }
+
+  .container > .right-column {
+    background-color: $black;
+  }
+
+  .container > .left-column .text-box,
+  .container > .right-column .text-box {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    max-width: 600px;
+  }
+
+  .container > .left-column .text-box h2,
+  .container > .right-column .text-box h2 {
+    @include fluid(60, 28, font-size);
+    font-weight: bold;
+    line-height: 1.14;
+    text-align: left;
+    text-transform: capitalize;
+    @include fluid(40, 20, margin-bottom);
+  }
+
+  .container > .left-column .text-box p,
+  .container > .right-column .text-box p {
+    font-size: 20px;
+    @include fluid(20, 16, font-size);
+    line-height: 1.5;
+  }
+
+  .container > .left-column .text-box {
+    padding-right: 5%;
+
+    @include tab {
+      padding-right: 10%;
+    }
+  }
+
+  .container > .right-column .text-box {
+    padding-left: 5%;
+
+    @include tab {
+      padding-left: 10%;
+    }
+  }
+
+  .container > .left-column img {
+    margin-left: 0;
+    width: 80%;
+  }
+
+  .container > .right-column .text-box h2 {
+    color: $white;
+  }
+
+  .container > .right-column .text-box p {
+    color: $white;
+    @include fluid(50, 25, margin-bottom);
+  }
+}
+
+#index .products {
+  .common-h-title-large {
+    @include fluid(200, 100, margin-bottom);
+  }
+
+  .products-container {
+    @include fluid(150, 75, margin-bottom);
+  }
+
+  .products-container .title-box {
+    @include flex-spacebetween-center();
+    @include fluid(60, 30, margin-bottom);
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .products-container .title-box h3 {
+    width: auto;
+    margin-right: 10%;
+
+    @include sp {
+      margin-right: 0;
+    }
+  }
+
+  .products-container .title-box p {
+    @include fluid(20, 16, font-size);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}
+
+#index .testimonials {
+  .container .small-text {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: $lightGray;
+    text-transform: uppercase;
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .common-h-title-regular {
+    text-align: center;
+    @include fluid(100, 50, margin-bottom);
+  }
+}
+
+#index .advantage {
+  background: $black;
+  @include fluid(200, 100, padding-top);
+  @include fluid(200, 100, padding-bottom);
+
+  .container h3 {
+    color: $white;
+    text-align: center;
+    @include fluid(100, 50, margin-bottom);
+  }
+
+  .container ul {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container ul li {
+    flex-basis: 29.333%;
+    margin-left: 2%;
+    margin-right: 2%;
+
+    @include sp {
+      margin-bottom: 50px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .container ul li img {
+    text-align: center;
+    @include fluid(50, 25, margin-bottom);
+    width: 50%;
+    max-width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .container ul li h4 {
+    text-align: center;
+    @include fluid(30, 20, font-size);
+    font-weight: 600;
+    text-align: center;
+    color: $white;
+    @include fluid(30, 15, margin-bottom);
+  }
+
+  .container ul li p {
+    font-size: 16px;
+    line-height: 1.63;
+    text-align: center;
+    color: $white;
+  }
+}
+
+#index .quiz {
+  .container {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > * {
+    flex-basis: 50%;
+  }
+
+  .container > .left-column {
+    padding-right: 5%;
+
+    @include sp {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .container > .right-column {
+    padding-left: 5%;
+
+    @include sp {
+      padding-left: 0;
+    }
+  }
+  .container > .left-column .small-text {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    color: $lightGray;
+    text-transform: uppercase;
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .container > .left-column .common-h-title-regular {
+    @include fluid(40, 20, margin-bottom);
+  }
+
+  .container > .left-column p {
+    @include fluid(20, 16, font-size);
+    line-height: 1.5;
+  }
+}
+/**********************************
+  *
   * About
   *
   **********************************/
@@ -290,32 +553,6 @@ $sp: 750px;
   }
 }
 
-#about .newsletter-banner {
-  background-image: linear-gradient(115deg, #78a6c3 1%, #0076bd 55%);
-  @include fluid(100, 40, padding-top);
-  @include fluid(100, 40, padding-bottom);
-
-  .container {
-    max-width: 880px;
-    width: 80%;
-    margin: auto;
-
-    @include sp {
-      width: 100%;
-    }
-  }
-
-  .container h3 {
-    font-size: 50px;
-    @include fluid(50, 20, font-size);
-    font-weight: bold;
-    line-height: 1.4;
-    text-align: center;
-    color: $white;
-    @include fluid(50, 20, margin-bottom);
-  }
-}
-
 #about .team {
   .container {
     @include flex-spacebetween-start();
@@ -334,10 +571,9 @@ $sp: 750px;
   }
 
   .container > .left-column h2 {
-    @include fluid(70, 28, font-size);
+    @include fluid(60, 28, font-size);
     font-weight: bold;
     line-height: 1.14;
-    color: $black;
   }
 
   .container > .right-column {
@@ -373,7 +609,7 @@ $sp: 750px;
   .container > .right-column ul li .name {
     @include fluid(30, 20, font-size);
     font-weight: 600;
-    color: $black;
+
     margin-bottom: 5px;
   }
 
@@ -389,7 +625,7 @@ $sp: 750px;
   .container > .right-column ul li .bio {
     font-size: 16px;
     line-height: 1.63;
-    color: $black;
+
     margin-bottom: 15px;
   }
 
@@ -496,7 +732,6 @@ $sp: 750px;
   .container p {
     @include fluid(20, 16, font-size);
     line-height: 1.5;
-    color: $black;
   }
 }
 
@@ -519,7 +754,7 @@ $sp: 750px;
     font-weight: 600;
     line-height: 1.5;
     text-align: center;
-    color: $black;
+
     @include fluid(60, 30, margin-bottom);
   }
 }
@@ -663,7 +898,6 @@ $sp: 750px;
     @include fluid(20, 16, font-size);
     font-weight: 600;
     line-height: 1.3;
-    color: $black;
   }
 
   .blog-articles
@@ -694,7 +928,7 @@ $sp: 750px;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.3;
-    color: $black;
+
     margin-top: 10px;
   }
 }
@@ -731,7 +965,6 @@ $sp: 750px;
     @include fluid(50, 30, font-size);
     font-weight: bold;
     line-height: 1.4;
-    color: $black;
   }
 
   .social-sharing {
@@ -744,7 +977,6 @@ $sp: 750px;
     width: auto;
     @include fluid(30, 15, margin-right);
     font-weight: 500;
-    color: $black;
   }
 
   .social-sharing ul {
@@ -800,7 +1032,6 @@ $sp: 750px;
   .title-outer h3 {
     font-size: 16px;
     font-weight: 500;
-    color: $black;
   }
 
   .title-outer .view-all {
@@ -873,7 +1104,6 @@ $sp: 750px;
     @include fluid(20, 16, font-size);
     font-weight: 600;
     line-height: 1.5;
-    color: $black;
   }
 }
 
@@ -960,7 +1190,7 @@ $sp: 750px;
     @include fluid(20, 16, font-size);
     font-weight: 600;
     line-height: 1;
-    color: $black;
+
     @include fluid(30, 20, margin-bottom);
   }
 
@@ -968,7 +1198,6 @@ $sp: 750px;
   .container > .left-column ul li .contact-detail a {
     font-size: 16px;
     line-height: 1.6;
-    color: $black;
   }
 }
 
@@ -1017,7 +1246,7 @@ $sp: 750px;
     font-size: 16px;
     font-weight: 16;
     line-height: 1.5;
-    color: $black;
+
     @include fluid(100, 50, margin-bottom);
   }
 
@@ -1025,7 +1254,7 @@ $sp: 750px;
     @include flex-spacebetween-start();
     flex-wrap: wrap;
 
-    @include tab() {
+    @include tab {
       display: block;
     }
   }
@@ -1039,9 +1268,8 @@ $sp: 750px;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.63;
-    color: $black;
 
-    @include tab() {
+    @include tab {
       padding-right: 0;
       margin-bottom: 20px;
     }
@@ -1050,7 +1278,7 @@ $sp: 750px;
   .container > .left-column .see-faq .button {
     padding-left: 2%;
 
-    @include tab() {
+    @include tab {
       padding-left: 0;
     }
   }
@@ -1064,14 +1292,13 @@ $sp: 750px;
       @include fluid(18, 16, font-size);
       font-weight: 500;
       line-height: 1.56;
-      color: $black;
+
       @include fluid(30, 15, margin-bottom);
     }
 
     ul li .contact-detail a {
       @include fluid(30, 20, font-size);
       font-weight: 600;
-      color: $black;
     }
   }
 }

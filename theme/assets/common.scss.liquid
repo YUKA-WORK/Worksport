@@ -302,12 +302,20 @@ button:focus {
   line-height: 1.3;
 }
 
+.common-h-title-regular {
+  line-height: 1.3;
+  letter-spacing: normal;
+  font-weight: bold;
+  color: $black;
+  @include fluid(50, 27, font-size);
+}
+
 .common-h-title-middle {
   line-height: 1.3;
   letter-spacing: normal;
   font-weight: bold;
   color: $black;
-  @include fluid(60, 28, font-size);
+  @include fluid(60, 30, font-size);
 }
 
 .common-h-title-large {
@@ -315,7 +323,7 @@ button:focus {
   letter-spacing: -1px;
   font-weight: bold;
   color: $black;
-  @include fluid(90, 36, font-size);
+  @include fluid(90, 33, font-size);
 }
 
 /**********************************
@@ -328,9 +336,54 @@ button:focus {
   @include fluid(150, 75, margin-bottom);
 }
 
-.page-full {
+.full-width {
   width: 100%;
   max-width: 100%;
+}
+
+.max-width-1200 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(135, 207, 235, 0.486);
+}
+
+.half-width-left {
+  max-width: 800px;
+  padding-left: 3rem !important;
+  background-color: rgba(0, 128, 0, 0.26);
+  margin-left: auto;
+
+  @media only screen and (min-width: 750px) and (max-width: 1024px) {
+    padding-left: 5rem !important;
+  }
+
+  @media (min-width: 1025px) {
+    padding-left: 5rem !important;
+  }
+
+  @include sp {
+    margin-left: unset;
+  }
+}
+
+.half-width-right {
+  max-width: 800px;
+  padding-right: 3rem !important;
+  background-color: rgba(14, 20, 14, 0.26);
+  margin-right: auto;
+
+  @media only screen and (min-width: 750px) and (max-width: 1024px) {
+    padding-right: 5rem !important;
+  }
+
+  @media (min-width: 1025px) {
+    padding-right: 5rem !important;
+  }
+
+  @include sp {
+    margin-right: unset;
+  }
 }
 
 /**********************************
@@ -346,4 +399,69 @@ button:focus {
 .hover-opacity:hover {
   opacity: 0.8;
   transition: 0.3s opacity ease;
+}
+
+/**********************************
+  *
+  * Newsletter Banner
+  *
+  **********************************/
+
+.newsletter-banner1 {
+  background-image: linear-gradient(115deg, #78a6c3 1%, #0076bd 55%);
+  @include fluid(150, 75, padding-top);
+  @include fluid(150, 75, padding-bottom);
+
+  .container {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > * {
+    flex-basis: 50%;
+  }
+
+  .container h3 {
+    color: $white;
+    text-transform: capitalize;
+
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
+  .container .newsletter h4 {
+    @include fluid(21, 17, font-size);
+    font-weight: bold;
+    line-height: 1.48;
+    letter-spacing: 0.63px;
+    color: $white;
+    text-transform: capitalize;
+    @include fluid(40, 20, margin-bottom);
+  }
+}
+
+.newsletter-banner2 {
+  background-image: linear-gradient(115deg, #78a6c3 1%, #0076bd 55%);
+  @include fluid(100, 40, padding-top);
+  @include fluid(100, 40, padding-bottom);
+
+  .container {
+    max-width: 880px;
+    width: 80%;
+    margin: auto;
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  .container h3 {
+    color: $white;
+    @include fluid(50, 20, margin-bottom);
+    text-transform: capitalize;
+  }
 }

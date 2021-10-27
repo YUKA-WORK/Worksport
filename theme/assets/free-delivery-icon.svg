@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210" height="210" viewBox="0 0 210 210">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="124" height="124" viewBox="0 0 124 124">
   <defs>
-    <filter id="Rectangle_498" x="0" y="0" width="210" height="210" filterUnits="userSpaceOnUse">
+    <clipPath id="clip-path">
+      <rect id="Rectangle_604" data-name="Rectangle 604" width="124" height="124" transform="translate(3242 8801)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Rectangle_498" x="-43" y="-43" width="210" height="210" filterUnits="userSpaceOnUse">
       <feOffset input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="15" result="blur"/>
       <feFlood flood-opacity="0.161"/>
@@ -8,18 +11,22 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="free-delivery-icon" transform="translate(-375 -6766)">
-    <g transform="matrix(1, 0, 0, 1, 375, 6766)" filter="url(#Rectangle_498)">
-      <g id="Rectangle_498-2" data-name="Rectangle 498" transform="translate(45 45)" fill="none" stroke="#fff" stroke-width="3">
-        <rect width="120" height="120" rx="20" stroke="none"/>
-        <rect x="1.5" y="1.5" width="117" height="117" rx="18.5" fill="none"/>
+  <g id="free-delivery-icon" transform="translate(-3242 -8801)">
+    <g id="Mask_Group_14" data-name="Mask Group 14" clip-path="url(#clip-path)">
+      <g id="free-delivery-icon-2" data-name="free-delivery-icon" transform="translate(2824 1992)">
+        <g transform="matrix(1, 0, 0, 1, 418, 6809)" filter="url(#Rectangle_498)">
+          <g id="Rectangle_498-2" data-name="Rectangle 498" transform="translate(2 2)" fill="none" stroke="#fff" stroke-width="3">
+            <rect width="120" height="120" rx="20" stroke="none"/>
+            <rect x="1.5" y="1.5" width="117" height="117" rx="18.5" fill="none"/>
+          </g>
+        </g>
+        <g id="Group_30" data-name="Group 30" transform="translate(-568.161 6692.556)">
+          <path id="Path_51" data-name="Path 51" d="M1135.366,162.7l-25.329-14.259-9.329,5.252,25.328,14.26Z" transform="translate(-62.419)" fill="#fff"/>
+          <path id="Path_52" data-name="Path 52" d="M1021.161,257.372l25.329,13.964V244.023l-25.329-13.964Z" transform="translate(0 -62.892)" fill="#fff"/>
+          <path id="Path_53" data-name="Path 53" d="M1040.2,187.688l-9.368,5.274,25.329,14.259,9.367-5.274Z" transform="translate(-7.455 -30.258)" fill="#fff"/>
+          <path id="Path_54" data-name="Path 54" d="M1167.02,235.259v9.172l.035,2.628-6.506,3.638-.026-3.848h0l-.009-8-9.391,5.177v27.313l25.329-13.964V230.06Z" transform="translate(-101.289 -62.892)" fill="#fff"/>
+        </g>
       </g>
-    </g>
-    <g id="Group_30" data-name="Group 30" transform="translate(-568.161 6692.556)">
-      <path id="Path_51" data-name="Path 51" d="M1135.366,162.7l-25.329-14.259-9.329,5.252,25.328,14.26Z" transform="translate(-62.419)" fill="#fff"/>
-      <path id="Path_52" data-name="Path 52" d="M1021.161,257.372l25.329,13.964V244.023l-25.329-13.964Z" transform="translate(0 -62.892)" fill="#fff"/>
-      <path id="Path_53" data-name="Path 53" d="M1040.2,187.688l-9.368,5.274,25.329,14.259,9.367-5.274Z" transform="translate(-7.455 -30.258)" fill="#fff"/>
-      <path id="Path_54" data-name="Path 54" d="M1167.02,235.259v9.172l.035,2.628-6.506,3.638-.026-3.848h0l-.009-8-9.391,5.177v27.313l25.329-13.964V230.06Z" transform="translate(-101.289 -62.892)" fill="#fff"/>
     </g>
   </g>
 </svg>
