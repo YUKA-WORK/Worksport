@@ -1331,3 +1331,144 @@ $sp: 750px;
     @include flex-center-center();
   }
 }
+
+/**********************************
+  *
+  * Single Product
+  *
+  **********************************/
+#singleProduct {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    flex-basis: 100%;
+  }
+
+  @include sp {
+    > .product-info {
+      order: 1;
+      margin-top: 30px;
+    }
+
+    > .product-images {
+      order: 0;
+    }
+
+    > .product-description {
+      order: 2;
+    }
+
+    > .product-type {
+      order: 3;
+    }
+  }
+}
+
+#singleProduct .product-info {
+  .container {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container > * {
+    flex-basis: 50%;
+  }
+
+  .container > .left-column .product__title {
+    @include fluid(50, 30, font-size);
+    font-weight: bold;
+    line-height: 1.6;
+
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
+  .container > .right-column {
+    .product-price {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: $lightGray;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#singleProduct .product-images {
+  background-color: #f9f9f9;
+  @include fluid(50, 25, padding-top);
+  @include fluid(20, 10, padding-bottom);
+}
+
+#singleProduct .product-description {
+  @include fluid(100, 50, padding-top);
+  @include fluid(100, 50, padding-bottom);
+
+  .product__description {
+    @include fluid(18, 16, font-size);
+    font-weight: 500;
+  }
+
+  .product__description * {
+    font-weight: revert;
+    font-size: revert;
+    margin: revert;
+    padding: revert;
+  }
+}
+
+#singleProduct .product-type {
+  .page-width {
+    border-top: 2px solid #84848433;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  ul {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  ul li {
+    @include flex-start-center();
+    flex-basis: 30.333%;
+    margin-right: 3%;
+
+    @include sp {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  ul li h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 15px;
+  }
+
+  ul li .item {
+    font-size: 16px;
+  }
+
+  ul li .items a {
+    color: $blue;
+  }
+
+  ul li .items .comma {
+    margin-right: 5px;
+    margin-left: -3px;
+    display: inline-block;
+  }
+
+  ul li .items .comma:last-child {
+    display: none !important;
+  }
+}

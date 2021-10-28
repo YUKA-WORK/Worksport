@@ -14,22 +14,20 @@ slider-component {
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 749px) {
-  .slider.slider--mobile {
-    position: relative;
-    flex-wrap: inherit;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scroll-padding-left: 1rem;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 1rem;
-  }
+.slider.slider--mobile {
+  position: relative;
+  flex-wrap: inherit;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-left: 1rem;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
 
-  .slider.slider--mobile .slider__slide {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
+.slider.slider--mobile .slider__slide {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 @media screen and (max-width: 989px) {
@@ -53,7 +51,8 @@ slider-component {
 /* Scrollbar */
 
 .slider {
-  scrollbar-color: rgb(var(--color-foreground)) rgba(var(--color-foreground), 0.04);
+  scrollbar-color: rgb(var(--color-foreground))
+    rgba(var(--color-foreground), 0.04);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -94,7 +93,7 @@ slider-component {
   justify-content: center;
 }
 
-@media screen and (min-width: 990px) {
+/* @media screen and (min-width: 990px) {
   .slider-buttons {
     display: none;
   }
@@ -104,10 +103,10 @@ slider-component {
   .slider--mobile + .slider-buttons {
     display: none;
   }
-}
+} */
 
 .slider-button {
-  color: rgba(var(--color-foreground), 0.75);
+  color: #0076bd;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -116,7 +115,7 @@ slider-component {
 }
 
 .slider-button:not([disabled]):hover {
-  color: rgb(var(--color-foreground));
+  color: #0075bd94;
 }
 
 .slider-button .icon {
