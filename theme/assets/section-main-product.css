@@ -239,6 +239,7 @@ fieldset.product-form__input .form__label {
 
 .product-form__submit {
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .no-js .product-form__submit.button--secondary {
@@ -317,6 +318,7 @@ a.product__text {
 .product .price .badge {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
 .product .price dl {
