@@ -57,27 +57,43 @@
             <div class="products-container ">
                 <div class="title-box">
                     <h3 class="common-h-title-regular">
-
                         Panels
                     </h3>
                     <p>
                         The number of panels in a cover determines fold size and truck bed access.
                     </p>
                 </div>
-                <ul>
-                    <li>
-                        Panels  product1
-                    </li>
-                    <li>
-                        Panels product2
-                    </li>
-                </ul>
+                <div class="collections">
+                    <ul>
+                        <li>
+                            {{ collections['3-panel'].image.src | collection_img_url: 'master' | img_tag: collections['3panel'].title }}
+                            <div class="collection-title">
+                                <a href="/pages/3-panel">
+                                    {{ collections['3-panel'].title }}
+                                </a>
+                                <p>
+                                    {{ collections['3-panel'].description }}
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            {{ collections['4-panel'].image.src | collection_img_url: 'master' | img_tag: collections['4panel'].title }}
+                            <div class="collection-title">
+                                <a href="/pages/4-panel">
+                                    {{ collections['4-panel'].title }}
+                                </a>
+                                <p>
+                                    {{ collections['4-panel'].description }}
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="products-container">
                 <div class="title-box">
                     <h3 class="common-h-title-regular">
-
                         Material
                     </h3>
                     <p>

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "sc3",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

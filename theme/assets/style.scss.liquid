@@ -317,6 +317,85 @@ $sp: 750px;
     font-weight: 500;
     line-height: 1.5;
   }
+
+  .products-container .collections ul {
+    @include flex-spacebetween-start();
+    align-items: stretch;
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .products-container .collections ul li {
+    flex-basis: 48%;
+    background-color: $offWhite;
+    border-radius: 30px;
+
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
+  .products-container .collections ul li:first-child {
+    margin-right: 2%;
+
+    @include sp {
+      margin-right: 0;
+    }
+  }
+
+  .products-container .collections ul li:last-child {
+    margin-left: 2%;
+
+    @include sp {
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .products-container .collections ul li img {
+    width: 100%;
+  }
+
+  .products-container .collections ul li .collection-title {
+    padding: 10%;
+  }
+
+  .products-container .collections ul li .collection-title a {
+    position: relative;
+    font-size: 30px;
+    @include fluid(30, 20, font-size);
+    font-weight: bold;
+    line-height: 1.23;
+    letter-spacing: 3px;
+    text-align: center;
+    color: $blue;
+    text-transform: uppercase;
+    display: block;
+    @include fluid(30, 15, margin-bottom);
+  }
+
+  .products-container .collections ul li .collection-title a:after {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background: transparent;
+    border-top: 4px solid $blue;
+    border-left: 4px solid $blue;
+    text-decoration: none;
+    color: transparent;
+    transform: rotate(135deg);
+  }
+
+  .products-container .collections ul li .collection-title p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.63;
+    text-align: center;
+    color: $lightGray;
+  }
 }
 
 #index .testimonials {
@@ -1471,4 +1550,131 @@ $sp: 750px;
   ul li .items .comma:last-child {
     display: none !important;
   }
+}
+
+/**********************************
+  *
+  * Product Description
+  *
+  **********************************/
+#productDescription .explore {
+  .page-width {
+    max-width: 630px;
+  }
+
+  .common-h-title-middle {
+    @include fluid(50, 25, margin-bottom);
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px;
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    color: $lightGray;
+    @include fluid(80, 40, margin-bottom);
+  }
+
+  ul {
+    @include flex-spacebetween-center();
+
+    @include sp {
+      flex-wrap: wrap;
+    }
+  }
+
+  ul li {
+    flex-basis: 33.333%;
+    padding: 0 5%;
+
+    @include sp {
+      padding: 0 2.5%;
+      margin-bottom: 20px;
+    }
+  }
+
+  ul li img {
+    width: 80%;
+    @include fluid(30, 15, margin-bottom);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ul li h4 {
+    @include fluid(24, 16, font-size);
+    text-align: center;
+  }
+}
+
+#productDescription .product-banner-wrapper {
+  @include fluid(50, 25, margin-bottom);
+
+  .product-banner {
+    background-color: $offWhite;
+    @include fluid(50, 25, margin-bottom);
+    @include fluid(80, 40, padding-top);
+    @include fluid(80, 40, padding-bottom);
+  }
+
+  .product-banner .container {
+    @include flex-spacebetween-center();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .product-banner .container > * {
+    flex-basis: 50%;
+  }
+
+  .product-banner:nth-child(even) .container {
+    flex-direction: row-reverse;
+
+    @include sp {
+      flex-direction: unset;
+    }
+  }
+
+  .product-banner .container > .left-column {
+    @include sp {
+      margin-bottom: 20px;
+    }
+  }
+
+  .product-banner .container > .left-column img {
+    width: 100%;
+  }
+
+  .product-banner:nth-child(odd) .container > .right-column {
+    padding-left: 10%;
+
+    @include sp {
+      padding-left: 0;
+    }
+  }
+
+  .product-banner:nth-child(even) .container > .right-column {
+    padding-right: 10%;
+
+    @include sp {
+      padding-right: 0;
+    }
+  }
+
+  .product-banner .container > .right-column h2 {
+    @include fluid(24, 16, font-size);
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .product-banner .container > .right-column .common-h-title-small {
+    @include fluid(80, 40, margin-bottom);
+  }
+}
+
+#productDescription .newsletter-banner1 {
+  @include fluid(50, 25, margin-bottom);
 }

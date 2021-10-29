@@ -1,0 +1,66 @@
+{% assign title = "" %}
+{% assign sub_title = collections[collection_name].description %}
+
+{%if collection_name == "3-panel"%}
+        {% assign title = "Explore Our 3 Panel Covers" %}
+{%elsif collection_name == "4-panel"%}
+        {% assign title = "Explore Our 4 Panel Covers" %}
+{%endif%}
+
+<div id="productDescription">
+    <section class="section explore">
+        <div class="page-width">
+            <h2 class="common-h-title-middle">
+                {{title}}
+            </h2>
+            <p>
+                {{sub_title}}
+            </p>
+
+            <ul>
+                {% for product in collections[collection_name].products %}
+                    <li>
+                        <img src="{{ product.images[0] | product_img_url: 'small' }}" alt="">
+                        <h4>{{product.title}}</h4>
+                    </li>
+                {% endfor%}
+            </ul>
+        </div>å
+    </section>
+
+    <section class="section product-banner-wrapper"> 
+        {% for product in collections[collection_name].products %}
+            <div class="product-banner">
+                <div class="page-width">
+                    <div class="container">
+                        <div class="left-column">
+                            <img src="{{ product.images[0] | product_img_url: 'master' }}" alt="">
+                        </div>
+                        <div class="right-column">
+                            <h2>{{product.title}}</h2>
+                            <h3 class="common-h-title-small">
+                                {%if product.title == "SC3"%}
+                                    Soft vinyl, three panel cover that’s competitively priced
+                                {%elsif product.title == "SC3 Pro"%}
+                                    Soft vinyl, three panel cover with our patented smart latch technology
+                                {%elsif product.title == "TC3"%}
+                                    Hard aluminium, three panel cover that’s built to be tough and secure
+                                {%elsif product.title == "SC4"%}
+                                    Soft vinyl, four panel cover that provides full bed access with our patented smart latch technology
+                                {%endif%}
+                            </h3>
+
+                            <div>
+                                <a href="/pages/{{ product.title | replace: " ", "-"}}">
+                                    Shop {{product.title}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor%}
+    </section>
+
+    {% include "newsletter-banner1"%}
+</div>

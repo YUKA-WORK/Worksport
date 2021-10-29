@@ -1,7 +1,7 @@
 {
   "sections": {
     "about": {
-      "type": "about-page",
+      "type": "about",
       "blocks": {
         "ea852989-f4e5-41fb-b153-9985cd7afd83": {
           "type": "team_member",
