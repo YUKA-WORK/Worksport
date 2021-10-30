@@ -1,0 +1,225 @@
+{% assign product = section.settings.product %}
+
+<div id="productDescription">
+    <section class="section hero-image">
+        <video autoplay loop muted>
+            <source src="https://cdn.shopify.com/s/files/1/0549/4957/6764/files/test.mp4?v=1635537370" type="video/mp4">
+        </video>
+
+        <div class="container">
+            <div class="text-box">
+                <div class="product-name">
+                    {{product.title}}
+                </div>
+                <h2 class="common-h-title-middle">
+                    Soft vinyl, three panel cover that’s competitively priced.
+                </h2>
+
+                {% include "product-detail-buy-button" product: product %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section features">
+        <div class="page-width">
+            <h2 class="common-h-title-small">
+                The features you’ve been waiting for.
+            </h2>
+            <div>
+                features video comes here
+            </div>
+        </div>
+    </section>
+
+    <section class="section banner">
+        <div class="page-width max-width-1200">
+            <div class="container">
+                <div class="left-column">
+                    <h2>
+                        A great addition to any truck bed.
+                    </h2>
+
+                    {% include "product-detail-buy-button" product: product %}
+                </div>
+
+                <div class="right-column">
+                    <h3>
+                        Easy no-drill installation
+                    </h3>
+                    <p>
+                        It comes fully assembled takes less than five minutes to install, with no mechanical skills, tools, or drilling required.
+                    </p>
+
+                    <h3>
+                        market leading features
+                    </h3>
+                    <p>
+                        It’s paired with our aggressive pricing, and with fuel savings up to 15% when installed and closed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="product-banner-image">
+                <img alt="" class="lazyload" data-src={{ "car.png" | asset_img_url: "master" }}/>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section tech-specks">
+        <div class="page-width max-width-1200">
+            <div class="speck">
+                <a class="toggle-button">
+                    <h3>
+                        Worksport™ Plastics
+                    </h3>
+                    <img alt="" class="lazyload" data-src={{ "arrow-down-black.svg" | asset_url }}/>
+                </a>
+
+                <div class="toggle-content">
+                    All plastic components used on the Worksport™ line of products is made using a proprietary mixture of PA66 plastic and nylon reinforcement. Our plastics are all tested to exceed 2000 (450lbs) Newton sheer strength, far exceeding OEM specifications. Our PA66N plastic components are: Buckle Assemblies, Rear Latch Handles, Cross-Bar connectors, Hinges, Corners & Caps, Latch Bases.
+                </div>
+            </div>
+
+            <div class="speck">
+                <a class="toggle-button">
+                    <h3>
+                        EPDM Rubber Seals
+                    </h3>
+                    <img alt="" class="lazyload" data-src={{ "arrow-down-black.svg" | asset_url }}/>
+                </a>
+
+                <div class="toggle-content">
+                    platea dictumst. Aliquam dapibus ullamcorper sagittis. Sed luctus pharetra ex, ac tincidunt enim tincidunt vitae. Cras at facilisis libero, non pulvinar ipsum. Aenean suscipit nulla faucibus, tincidunt justo ac, lobortis leo. In varius mi at eleifend vehicula. Maecenas in ipsum felis. Praesent feugiat augue ex, a lacinia risus condimentum eu. Cras vehicula sodales velit, sit amet eleifend purus faucibus laoreet. Fusce consequat elementum sapien non suscipit. Nullam in placerat nibh. Praesent enim justo, semper at sapien vitae, lobortis dapibus magna. Duis placerat nulla a eros consectetur auctor.
+                </div>
+            </div>
+
+            <div class="speck">
+                <a class="toggle-button">
+                    <h3>
+                        Worksport Alloy
+                    </h3>
+                    <img alt="" class="lazyload" data-src={{ "arrow-down-black.svg" | asset_url }}/>
+                </a>
+
+                <div class="toggle-content">
+                    platea dictumst. Aliquam dapibus ullamcorper sagittis. Sed luctus pharetra ex, ac tincidunt enim tincidunt vitae. Cras at facilisis libero, non pulvinar ipsum. Aenean suscipit nulla faucibus, tincidunt justo ac, lobortis leo. In varius mi at eleifend vehicula. Maecenas in ipsum felis. Praesent feugiat augue ex, a lacinia risus condimentum eu. Cras vehicula sodales velit, sit amet eleifend purus faucibus laoreet. Fusce consequat elementum sapien non suscipit. Nullam in placerat nibh. Praesent enim justo, semper at sapien vitae, lobortis dapibus magna. Duis placerat nulla a eros consectetur auctor.
+                </div>
+            </div>
+
+            <div class="speck">
+                <a class="toggle-button">
+                    <h3>
+                        Worksport Latches
+                    </h3>
+                    <img alt="" class="lazyload" data-src={{ "arrow-down-black.svg" | asset_url }}/>
+                </a>
+
+                <div class="toggle-content">
+                    platea dictumst. Aliquam dapibus ullamcorper sagittis. Sed luctus pharetra ex, ac tincidunt enim tincidunt vitae. Cras at facilisis libero, non pulvinar ipsum. Aenean suscipit nulla faucibus, tincidunt justo ac, lobortis leo. In varius mi at eleifend vehicula. Maecenas in ipsum felis. Praesent feugiat augue ex, a lacinia risus condimentum eu. Cras vehicula sodales velit, sit amet eleifend purus faucibus laoreet. Fusce consequat elementum sapien non suscipit. Nullam in placerat nibh. Praesent enim justo, semper at sapien vitae, lobortis dapibus magna. Duis placerat nulla a eros consectetur auctor.
+                </div>
+            </div>
+
+            <div class="speck">
+                <a class="toggle-button">
+                    <h3>
+                        Worksport Thread
+                    </h3>
+                    <img alt="" class="lazyload" data-src={{ "arrow-down-black.svg" | asset_url }}/>
+                </a>
+
+                <div class="toggle-content">
+                    platea dictumst. Aliquam dapibus ullamcorper sagittis. Sed luctus pharetra ex, ac tincidunt enim tincidunt vitae. Cras at facilisis libero, non pulvinar ipsum. Aenean suscipit nulla faucibus, tincidunt justo ac, lobortis leo. In varius mi at eleifend vehicula. Maecenas in ipsum felis. Praesent feugiat augue ex, a lacinia risus condimentum eu. Cras vehicula sodales velit, sit amet eleifend purus faucibus laoreet. Fusce consequat elementum sapien non suscipit. Nullam in placerat nibh. Praesent enim justo, semper at sapien vitae, lobortis dapibus magna. Duis placerat nulla a eros consectetur auctor.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section specifications">
+        <div class="page-width max-width-1200">
+            <div class="text-box">
+                <h2 class="common-h-title-middle">
+                    Specifications
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore et dolore magna aliqua.
+                </p>
+                <div class="download">
+                    <a href="#">Download Installation Instructions</a>
+                </div>
+            </div>
+
+            <div class="list">
+                <ul>
+                    <li>
+                        <img alt="" class="lazyload" data-src={{ "weather-protection-bl-icon.svg" | asset_url }}/>
+                        <h4>
+                            Weather Protection
+                        </h4>
+                        <p>
+                            Weather tight “Q seal” gaskets. Entire perimeter seal with hard wearing rubber.
+                        </p>
+                    </li>
+                    <li>
+                        <img alt="" class="lazyload" data-src={{ "security-bl-icon.svg" | asset_url }}/>
+                        <h4>
+                            Security
+                        </h4>
+                        <p>
+                            Dual sided latch only accessible when tail gate is open.
+                        </p>
+                    </li>
+                    <li>
+                        <img alt="" class="lazyload" data-src={{ "warranty-bl-icon.svg" | asset_url }}/>
+                        <h4>
+                            Warranty
+                        </h4>
+                        <p>
+                            Worksport offers a limited warranty on all components.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+
+<script>
+  $( document ).ready(function() {
+    $(".speck .toggle-content").hide();
+    $(".speck:first-child .toggle-button").addClass("active");
+    $(".speck:first-child .toggle-content").slideToggle();
+
+    $(".toggle-button").on("click", function (event) {
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+
+      var toggleContent = $(this).siblings(".toggle-content");
+      if (toggleContent.css("display") == "none") {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+
+      $(this).siblings(".toggle-content").slideToggle();
+    });
+});
+</script>
+
+
+{{ section.settings.test_header }}
+
+{% schema %}
+{
+    "name": "Product Detail Settings",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      }
+    ]
+  }
+{% endschema %}
