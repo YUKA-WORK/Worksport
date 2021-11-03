@@ -64,19 +64,19 @@
                     <ul>
                         {%- for block in section.blocks -%}
                             <li>
-                                <img alt="" class="lazyload photo" data-src="{{block.settings.image | img_url:'master'}}"/>
-                                <h3 class="name">{{block.settings.name}}</h3>
-                                <div class="job-title">{{block.settings.job_title}}</div>
+                                <img alt="" class="lazyload photo" data-src="{{block.settings.team_member_image | img_url:'master'}}"/>
+                                <h3 class="name">{{block.settings.team_member_name}}</h3>
+                                <div class="job-title">{{block.settings.team_member_job_title}}</div>
                                 <p class="bio">
-                                    {{block.settings.bio}}
+                                    {{block.settings.team_member_bio}}
                                 </p>
                                 <div class="social-media">
-                                    {% if block.settings.linkedin_url != blank %}
-                                        <a href={{block.settings.linkedin_url}} target="_blank"><img alt="" class="lazyload" data-src={{ "linkedin-blue-icon.svg" | asset_url }}/></a>
+                                    {% if block.settings.team_member_linkedin_url != blank %}
+                                        <a href={{block.settings.team_member_linkedin_url}} target="_blank"><img alt="" class="lazyload" data-src={{ "linkedin-blue-icon.svg" | asset_url }}/></a>
                                     {% endif %}
 
-                                    {% if block.settings.twitter_url != blank %}
-                                        <a href={{block.settings.twitter_url}} target="_blank"><img alt="" class="lazyload" data-src={{ "twitter-blue-icon.svg" | asset_url }}/></a>
+                                    {% if block.settings.team_member_twitter_url != blank %}
+                                        <a href={{block.settings.team_member_twitter_url}} target="_blank"><img alt="" class="lazyload" data-src={{ "twitter-blue-icon.svg" | asset_url }}/></a>
                                     {% endif %}
                                 </div>
                             </li>
@@ -123,38 +123,38 @@
 {
     "blocks": [
       {
-        "type": "team_member",
+        "type": "block",
         "name": "Team Member",
         "settings": [
           {
             "type":"image_picker",
-            "label":"Image",
-            "id":"image"
-          },
-          {
-            "id": "name",
-            "type": "text",
-            "label": "Name"
+            "id":"team_member_image",
+            "label":"Team member image"
           },
           {
             "type": "text",
-            "id": "job_title",
-            "label": "Job title"
+            "id": "team_member_name",
+            "label": "Team member name"
+          },
+          {
+            "type": "text",
+            "id": "team_member_job_title",
+            "label": "Team member job title"
           },
           {
             "type": "html",
-            "id": "bio",
-            "label": "Bio" 
+            "id": "team_member_bio",
+            "label": "Team member bio"
           },
           {
             "type": "url",
-            "id": "linkedin_url",
-            "label": "LinkedIn URL" 
+            "id": "team_member_linkedin_url",
+            "label": "Team member LinkedIn URL"
           },
           {
             "type": "url",
-            "id": "twitter_url",
-            "label": "Twitter URL" 
+            "id": "team_member_twitter_url",
+            "label": "Team member Twitter URL"
           }
         ]
       }
