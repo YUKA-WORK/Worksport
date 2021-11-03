@@ -2,7 +2,91 @@
   "sections": {
     "main": {
       "type": "product-detail",
-      "settings": {}
+      "blocks": {
+        "d2cd98f3-110d-4a21-8b1b-c17e64466914": {
+          "type": "block-1",
+          "settings": {
+            "product_features_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0549\/4957\/6764\/files\/test2.mp4?v=1635790842",
+            "product_features_video_title": "Frame",
+            "product_features_video_description": "Powder coated lightweight aluminium cross members & frame."
+          }
+        },
+        "ea560c4d-f913-4e41-8164-c977ec5bdf0a": {
+          "type": "block-1",
+          "settings": {
+            "product_features_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0549\/4957\/6764\/files\/test3.mp4?v=1635790766",
+            "product_features_video_title": "Latch",
+            "product_features_video_description": "Latch video description copy comes here - text text text text text text text text text text text text text text"
+          }
+        },
+        "49200a8e-ec8a-4003-8ce4-d7a185a04741": {
+          "type": "block-1",
+          "settings": {
+            "product_features_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0549\/4957\/6764\/files\/test4.mp4?v=1635790766",
+            "product_features_video_title": "Cover",
+            "product_features_video_description": "Cover video description copy comes here - text text text text text text text text text text text text text text"
+          }
+        },
+        "1d35d79b-4dcf-492f-a987-123114e88ee2": {
+          "type": "block-1",
+          "settings": {
+            "product_features_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0549\/4957\/6764\/files\/test5.mp4?v=1635962678",
+            "product_features_video_title": "Hardware",
+            "product_features_video_description": "Hardware video description copy comes here - text text text text text text text text text text text text text text"
+          }
+        },
+        "21047535-904a-442a-a282-fe30c849326a": {
+          "type": "block-2",
+          "settings": {
+            "product_feature_image": "shopify:\/\/shop_images\/test-img1.jpg",
+            "product_feature_title": "Frame",
+            "product_feature_description": "The frame of The Worksport™ SC3 cover is powder coated lightweight aluminum with strengthening cross members. The frame has precision welded frame connections for the most robust possible construction"
+          }
+        },
+        "f51a566a-71e4-4ff9-8abb-0a5ba4d3cf15": {
+          "type": "block-2",
+          "settings": {
+            "product_feature_image": "shopify:\/\/shop_images\/test-img2.jpg",
+            "product_feature_title": "Latch",
+            "product_feature_description": "The cam latch offers a wide range of adjustability and a handle that tucks away to prevent it from interfering with your cargo."
+          }
+        },
+        "59a16c2d-85b9-46f4-86cd-a09b667822fc": {
+          "type": "block-2",
+          "settings": {
+            "product_feature_image": "shopify:\/\/shop_images\/test-img3.jpg",
+            "product_feature_title": "Front Clamps",
+            "product_feature_description": "Durable, All metal 60\/63 extruded aluminum clamps, coated in anti-abrasive plastic to protect the connection point from damage and safely securing the cover in position."
+          }
+        },
+        "8f8d3e60-82c0-4439-a40a-60833fe78837": {
+          "type": "block-2",
+          "settings": {
+            "product_feature_image": "shopify:\/\/shop_images\/test-img4.jpg",
+            "product_feature_title": "Seals",
+            "product_feature_description": "Weather tight “Q-Seal” gaskets protect your cargo form water, snow, and other debris. The entire perimeter of the cover is sealed with hard wearing rubber that is designed to last the lifetime of the product."
+          }
+        }
+      },
+      "block_order": [
+        "d2cd98f3-110d-4a21-8b1b-c17e64466914",
+        "ea560c4d-f913-4e41-8164-c977ec5bdf0a",
+        "49200a8e-ec8a-4003-8ce4-d7a185a04741",
+        "1d35d79b-4dcf-492f-a987-123114e88ee2",
+        "21047535-904a-442a-a282-fe30c849326a",
+        "f51a566a-71e4-4ff9-8abb-0a5ba4d3cf15",
+        "59a16c2d-85b9-46f4-86cd-a09b667822fc",
+        "8f8d3e60-82c0-4439-a40a-60833fe78837"
+      ],
+      "settings": {
+        "product_detail_product": "sc3",
+        "product_detail_hero_background_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0549\/4957\/6764\/files\/test.mp4?v=1635537370",
+        "product_detail_hero_headline": "Soft vinyl, three panel cover that’s competitively priced.",
+        "product_features_headline": "SC3 Three panel cover",
+        "product_banner_headline": "A great addition to any truck bed.",
+        "product_banner_text": "<h3>\n  Easy no-drill installation\n<\/h3>\n<p>\n  It comes fully assembled takes less than five minutes to install, with no mechanical skills, tools, or drilling required.\n<\/p>\n<h3>\n  market leading features\n<\/h3>\n<p>\n  It’s paired with our aggressive pricing, and with fuel savings up to 15% when installed and closed.\n<\/p>",
+        "product_banner_image": "shopify:\/\/shop_images\/car.png"
+      }
     }
   },
   "order": [
