@@ -100,14 +100,32 @@
                         A tonneau cover provides security for your cargo and protection from the elements.
                     </p>
                 </div>
-                <ul>
-                    <li>
-                        Panels  product1
-                    </li>
-                    <li>
-                        Panels product2
-                    </li>
-                </ul>
+                <div class="collections">
+                    <ul>
+                        <li>
+                            {{ collections['soft-cover'].image.src | collection_img_url: 'master' | img_tag: collections['soft-cover'].title }}
+                            <div class="collection-title">
+                                <a href="/pages/soft-cover">
+                                    {{ collections['soft-cover'].title }}
+                                </a>
+                                <p>
+                                    {{ collections['soft-cover'].description }}
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            {{ collections['tough-cover'].image.src | collection_img_url: 'master' | img_tag: collections['tough-cover'].title }}
+                            <div class="collection-title">
+                                <a href="/pages/tough-cover">
+                                    {{ collections['tough-cover'].title }}
+                                </a>
+                                <p>
+                                    {{ collections['tough-cover'].description }}
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="products-container">
@@ -119,14 +137,32 @@
                         The type of latch is a factor when considering security and accessibility.
                     </p>
                 </div>
-                <ul>
-                    <li>
-                        Panels  product1
-                    </li>
-                    <li>
-                        Panels product2
-                    </li>
-                </ul>
+                <div class="collections">
+                    <ul>
+                        <li>
+                            {{ collections['cam-latches'].image.src | collection_img_url: 'master' | img_tag: collections['cam-latches'].title }}
+                            <div class="collection-title">
+                                <a href="/pages/cam-latches">
+                                    {{ collections['cam-latches'].title }}
+                                </a>
+                                <p>
+                                    {{ collections['cam-latches'].description }}
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            {{ collections['smart-latch'].image.src | collection_img_url: 'master' | img_tag: collections['smart-latch'].title }}
+                            <div class="collection-title">
+                                <a href="/pages/smart-latch">
+                                    {{ collections['smart-latch'].title }}
+                                </a>
+                                <p>
+                                    {{ collections['smart-latch'].description }}
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
