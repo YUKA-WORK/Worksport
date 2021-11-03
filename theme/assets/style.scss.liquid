@@ -374,19 +374,21 @@ $sp: 750px;
     text-transform: uppercase;
     display: block;
     @include fluid(30, 15, margin-bottom);
+    @include flex-center-center();
   }
 
   .products-container .collections ul li .collection-title a:after {
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    @include fluid(15, 10, width);
+    @include fluid(15, 10, height);
     content: "";
     background: transparent;
-    border-top: 4px solid $blue;
-    border-left: 4px solid $blue;
+    border-top: 3px solid $blue;
+    border-left: 3px solid $blue;
     text-decoration: none;
     color: transparent;
     transform: rotate(135deg);
+    @include fluid(20, 10, margin-left);
   }
 
   .products-container .collections ul li .collection-title p {
@@ -1717,17 +1719,159 @@ $sp: 750px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    background-color: pink;
+  }
+
+  .container .text-box .product-name {
+    line-height: 1;
+    color: $black;
+    @include fluid(60, 30, font-size);
+    @include fluid(30, 15, margin-bottom);
+  }
+
+  .container .text-box .common-h-title-middle {
+    @include fluid(80, 40, margin-bottom);
   }
 }
 
-#productDescription .features {
+#productDescription .features-videos {
   background-color: $offWhite;
   @include fluid(150, 75, padding-top);
   @include fluid(150, 75, padding-bottom);
 
   .common-h-title-small {
     text-align: center;
+    @include fluid(100, 50, margin-bottom);
+  }
+
+  .video-list {
+    @include flex-spacebetween-start();
+    @include sp {
+      display: block;
+    }
+  }
+
+  .video-list > * {
+    flex-basis: 50%;
+  }
+
+  .video-tabs-content-wrapper {
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
+  .video-tabs-wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+
+    @include sp {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .video-tabs-content-wrapper video {
+    width: 100%;
+  }
+
+  .video-tab-content {
+    display: none;
+  }
+
+  .video-tab-content.active {
+    display: block;
+  }
+
+  .video-tabs-wrapper .video-tabs-items .video-tab-item {
+    @include fluid(40, 20, margin-bottom);
+  }
+
+  .video-tabs-wrapper .video-tabs-items .video-tab-item .video-tab-title-text {
+    font-size: 30px;
+    @include fluid(30, 20, font-size);
+    font-weight: bold;
+    line-height: 1.23;
+    letter-spacing: 3px;
+    color: #d9dfe0;
+    @include fluid(50, 25, margin-bottom);
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .video-tabs-wrapper
+    .video-tabs-items
+    .video-tab-item.active
+    .video-tab-title-text,
+  .video-tabs-wrapper
+    .video-tabs-items
+    .video-tab-item
+    .video-tab-title-text:hover {
+    color: $blue;
+  }
+
+  .video-tabs-wrapper .video-tabs-items .video-tab-item .video-tab-description {
+    display: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.63;
+    color: $lightGray;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .video-tabs-wrapper
+    .video-tabs-items
+    .video-tab-item
+    .video-tab-description:before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #7a8c90;
+    margin-bottom: 15px;
+  }
+}
+
+#productDescription .product-features {
+  .common-h-title-large {
+    @include fluid(50, 25, margin-bottom);
+    text-align: center;
+  }
+
+  .product-features-list {
+    @include fluid(100, 50, margin-top);
+  }
+
+  .product-features-list .product-feature {
+    @include fluid(150, 75, margin-bottom);
+  }
+
+  .product-features-list .product-feature ul {
+    @include flex-spacebetween-center();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .product-features-list .product-feature:nth-child(even) ul {
+    flex-direction: row-reverse;
+  }
+
+  .product-features-list .product-feature ul li {
+    flex-basis: 50%;
+    padding: 5%;
+  }
+
+  .product-features-list .product-feature ul li .common-h-title-regular {
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .product-features-list .product-feature ul li .description {
+    font-size: 20px;
+    @include fluid(20, 16, font-size);
+    line-height: 1.5;
   }
 }
 
@@ -1832,12 +1976,30 @@ $sp: 750px;
   }
 
   .text-box .download a {
-    font-size: 16px;
+    position: relative;
+    @include fluid(16, 14, font-size);
     font-weight: bold;
-    line-height: 2.13;
+    line-height: 1.23;
     letter-spacing: 0.4px;
     text-align: center;
-    color: #0076bd;
+    color: $blue;
+    text-transform: uppercase;
+    display: block;
+    @include flex-center-center();
+  }
+
+  .text-box .download a:after {
+    display: inline-block;
+    @include fluid(10, 7, width);
+    @include fluid(10, 7, height);
+    content: "";
+    background: transparent;
+    border-top: 2px solid $blue;
+    border-left: 2px solid $blue;
+    text-decoration: none;
+    color: transparent;
+    transform: rotate(135deg);
+    @include fluid(20, 10, margin-left);
   }
 
   .list ul {
@@ -1916,5 +2078,98 @@ $sp: 750px;
     @include fluid(20, 16, font-size);
     line-height: 1.5;
     @include fluid(30, 15, padding-bottom);
+  }
+}
+
+#productDescription .application-lists {
+  .common-h-title-small {
+    text-align: center;
+    @include fluid(50, 25, margin-bottom);
+  }
+  .cf-widget-application-lists .tab-labels {
+    @include flex-start-center();
+    flex-wrap: wrap;
+    @include fluid(30, 15, margin-bottom);
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab {
+    flex-basis: 20%;
+    padding: 0 3%;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab:first-child {
+    margin-left: -3%;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab img {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab img.first {
+    display: inline-block !important;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab img.second {
+    display: none !important;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab.active img.first {
+    display: none !important;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab.active img.second {
+    display: inline-block !important;
+  }
+
+  .cf-widget-application-lists .tab-contents-container .cf-widget-item h3 {
+    @include fluid(30, 20, font-size);
+    font-weight: bold;
+    line-height: 1.23;
+    letter-spacing: 3px;
+    text-align: left;
+    color: $blue;
+  }
+
+  .cf-widget-application-lists .tab-contents-container .cf-widget-item table {
+    width: 100%;
+    @include fluid(50, 25, margin-top);
+    @include fluid(150, 75, margin-bottom);
+  }
+
+  .cf-widget-application-lists .tab-contents-container .cf-widget-item table * {
+    word-break: break-all;
+  }
+
+  .cf-widget-application-lists
+    .tab-contents-container
+    .cf-widget-item
+    table
+    th {
+    @include fluid(20, 14, font-size);
+
+    @include sp {
+      font-size: 2.8vw;
+      white-space: nowrap;
+    }
+  }
+
+  .cf-widget-application-lists
+    .tab-contents-container
+    .cf-widget-item
+    table
+    td {
+    @include fluid(16, 13, font-size);
+  }
+
+  .cf-widget-application-lists .tab-contents-container .cf-widget-item table th,
+  .cf-widget-application-lists
+    .tab-contents-container
+    .cf-widget-item
+    table
+    td {
+    @include sp {
+      padding: 2%;
+    }
   }
 }

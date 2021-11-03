@@ -1,9 +1,13 @@
-{% assign product = section.settings.product %}
+<!-- Assign product in Admin Dashboard -->
+{% assign product = section.settings.product_detail_product %}
+
 
 <div id="productDescription">
+
+    <!-- Add/Edit in Admin Dashboard -->
     <section class="section hero-image">
         <video autoplay loop muted>
-            <source src="https://cdn.shopify.com/s/files/1/0549/4957/6764/files/test.mp4?v=1635537370" type="video/mp4">
+            <source src={{ section.settings.product_detail_hero_background_video_url }} type="video/mp4">
         </video>
 
         <div class="container">
@@ -12,7 +16,7 @@
                     {{product.title}}
                 </div>
                 <h2 class="common-h-title-middle">
-                    Soft vinyl, three panel cover that’s competitively priced.
+                    {{ section.settings.product_detail_hero_headline }}
                 </h2>
 
                 {% include "product-detail-buy-button" product: product %}
@@ -20,52 +24,102 @@
         </div>
     </section>
 
-    <section class="section features">
+    <!-- Add/Edit in Admin Dashboard -->
+    <section class="section features-videos">
         <div class="page-width">
             <h2 class="common-h-title-small">
                 The features you’ve been waiting for.
             </h2>
-            <div>
-                features video comes here
+
+            <div class="video-list">
+                <div class="video-tabs-content-wrapper">
+                    {%- for block in section.blocks -%}
+                        {% if block.type == 'block-1' %}
+                            <div class="video-tab-content" data-num="{{forloop.index}}">
+                                <video class="video" data-num="{{forloop.index}}" muted>
+                                    <source src={{ block.settings.product_features_video_url }} type="video/mp4">
+                                </video>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="video-tabs-wrapper">
+                    <div class="video-tabs-items">
+                        {%- for block in section.blocks -%}
+                            {% if block.type == 'block-1' %}
+                                <div class="video-tab-item" data-num="{{forloop.index}}">
+                                    <a class="video-tab-title-text" data-num="{{forloop.index}}">{{ block.settings.product_features_video_title }}</a>
+                                    <div class="video-tab-description">
+                                        {{ block.settings.product_features_video_description }}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Add/Edit in Admin Dashboard -->
+    <section class="section product-features">
+        <div class="page-width max-width-1200">
+            <h2 class="common-h-title-large">
+                {{ section.settings.product_features_headline }}
+            </h2>
+            {% include "product-detail-buy-button" product: product %}
+
+            <div class="product-features-list">
+                {%- for block in section.blocks -%}
+                    {% if block.type == 'block-2' %}
+                        <div class="product-feature">
+                            <ul>
+                                <li class="text-box">
+                                    <h3 class="common-h-title-regular">
+                                        {{ block.settings.product_feature_title }}
+                                    </h3>
+                                    <p class="description">
+                                        {{ block.settings.product_feature_description }}
+                                    </p>
+                                </li>
+                                <li class="image-box">
+                                    <img alt="" class="lazyload photo" data-src="{{block.settings.product_feature_image | img_url:'master'}}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </section>
 
+    <!-- Add/Edit in Admin Dashboard -->
     <section class="section banner">
         <div class="page-width max-width-1200">
             <div class="container">
                 <div class="left-column">
                     <h2>
-                        A great addition to any truck bed.
+                        {{ section.settings.product_banner_headline }}
                     </h2>
 
                     {% include "product-detail-buy-button" product: product %}
                 </div>
 
                 <div class="right-column">
-                    <h3>
-                        Easy no-drill installation
-                    </h3>
-                    <p>
-                        It comes fully assembled takes less than five minutes to install, with no mechanical skills, tools, or drilling required.
-                    </p>
-
-                    <h3>
-                        market leading features
-                    </h3>
-                    <p>
-                        It’s paired with our aggressive pricing, and with fuel savings up to 15% when installed and closed.
-                    </p>
+                    {{ section.settings.product_banner_text }}
                 </div>
             </div>
 
             <div class="product-banner-image">
-                <img alt="" class="lazyload" data-src={{ "car.png" | asset_img_url: "master" }}/>
+                <img alt="" class="lazyload photo" data-src="{{section.settings.product_banner_image | img_url:'master'}}"/>
             </div>
 
         </div>
     </section>
 
+    <!-- Add/Edit Technical Specifications of the product in Custom Fields App -->
     <section class="section tech-specks">
         <div class="page-width max-width-1200">
             {% if product.metafields.custom_fields["technical_specifications"] != blank %}
@@ -90,6 +144,7 @@
         </div>
     </section>
 
+    <!-- Add/Edit Installation Instructions URL of the product in Custom Fields App -->
     <section class="section specifications">
         <div class="page-width max-width-1200">
             <div class="text-box">
@@ -99,9 +154,11 @@
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore et dolore magna aliqua.
                 </p>
-                <div class="download">
-                    <a href="#">Download Installation Instructions</a>
-                </div>
+                {% if product.metafields.custom_fields["installation_instructions_url"] != blank %}
+                    <div class="download">
+                        <a target="_blank" href='{{ product.metafields.custom_fields["installation_instructions_url"] }}'>Download Installation Instructions</a>
+                    </div>
+                {% endif %}
             </div>
 
             <div class="list">
@@ -138,43 +195,236 @@
         </div>
     </section>
 
+    <!-- Add/Edit Application Lists of the product in Custom Fields App -->
+    <section class="section application-lists">
+        <div class="page-width max-width-1200">
+            <h2 class="common-h-title-small">
+                Application Lists
+            </h2>
+
+            {% if product.metafields.custom_fields["application_lists"] != blank %}
+                {% assign data_attr = shop.metafields._cf_products["application_lists"].data_attr %}
+                <div class="cf-widget-application-lists cf-widget__tabs cf-auto-init" {{ data_attr }}>
+                    <div class="cf-widget-items-wrapper">
+                        <div class="tab-labels tab-labels--hidden">
+                            {% for item in product.metafields.custom_fields["application_lists"] %}
+                                <span class="cf-tab" data-index="{{ forloop.index0 }}">
+                                    {{ item.title }}
+                                </span>
+                            {% endfor %}
+                        </div>
+                        <div class="tab-contents-container">
+                            {% for item in product.metafields.custom_fields["application_lists"] %}
+                                <span class="cf-tab cf-tab--pseudo" data-index="{{ forloop.index0 }}">
+                                    {{ item.title }}
+                                </span>
+                                <div class="cf-widget-item" data-index="{{ forloop.index0 }}">
+                                    <div class="inner">
+
+                                        {% if item.body != blank %}
+                                            <div class="cf-widget-field cf-widget-field__body cf-widget-field--html">
+                                                {{ item.body }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
 
 </div>
 
 <script>
-  $( document ).ready(function() {
+  $(document).ready(function() {
+
+    //Play Features videos
+    PlayFeaturesVideos();
+
+    function PlayFeaturesVideos() {
+
+        var currentNum;
+        var currentTabContent;
+        var currentTabItem;
+        var currentVideo;
+        var numOfVideos = $(".video-tabs-content-wrapper .video").length;
+        var clicked = false;
+
+        videoInit(1);
+
+        function videoInit(num) {
+            currentNum = num;
+            currentTabContent = $(".video-tab-content[data-num='" + num + "']");
+            currentTabItem = $(".video-tab-item[data-num='" + num + "']")
+            currentVideo = currentTabContent.find(".video");
+
+            videoPlay();
+        }
+
+        function videoPlay() {
+            $(".video-tab-description").hide();
+
+            currentTabContent.addClass("active");
+            currentTabItem.addClass("active");
+            currentTabItem.find(".video-tab-description").slideToggle("normal");
+            currentVideo.trigger("play");
+
+            $(currentVideo).on("ended", function() {
+                if ((!clicked) && currentNum < numOfVideos) {
+                    currentTabContent.removeClass("active");
+                    currentTabItem.removeClass("active");
+                    currentNum++;
+
+                    videoInit(currentNum);
+                }
+            });
+        };
+
+        $(".video-tab-title-text").on("click", function(event) {
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+
+            videoClicked($(this).data("num"));
+        });
+
+        $(".video").on("click", function() {
+            videoClicked($(this).data("num"));
+        });
+
+        function videoClicked(num) {
+            clicked = true;
+
+            var clickedNum = num;
+            var clickedTabContent = $(".video-tab-content[data-num='" + clickedNum + "']");
+            var clickedTabItem = $(".video-tab-item[data-num='" + clickedNum + "']")
+            var clickedVideo = clickedTabContent.find(".video");
+
+            $(".video").attr("loop", true);
+
+            if (clickedTabItem.hasClass("active")) {
+                if (clickedVideo.get(0).paused) {
+                    clickedVideo.trigger("play");
+                } else {
+                    clickedVideo.trigger("pause");
+                }
+            } else {
+                $(".video-tab-description").hide();
+                $(".video-tab-content").removeClass("active");
+                $(".video-tab-item").removeClass("active");
+                $(".video").each(function() {
+                    $(this).get(0).pause();
+                    $(this).get(0).currentTime = 0;
+                });
+
+                clickedTabContent.addClass("active");
+                clickedTabItem.addClass("active");
+                clickedTabItem.find(".video-tab-description").slideToggle("normal");
+                clickedVideo.trigger("play");
+            }
+        }
+    }
+
+    //Technical Specifications toggle
     $(".speck .toggle-content").hide();
     $(".speck:first-child .toggle-button").addClass("active");
     $(".speck:first-child .toggle-content").slideToggle();
 
-    $(".toggle-button").on("click", function (event) {
-      event.stopPropagation();
-      event.stopImmediatePropagation();
+    $(".toggle-button").on("click", function(event) {
+        event.stopPropagation();
+        event.stopImmediatePropagation();
 
-      var toggleContent = $(this).siblings(".toggle-content");
-      if (toggleContent.css("display") == "none") {
-        $(this).addClass("active");
-      } else {
-        $(this).removeClass("active");
-      }
+        var toggleContent = $(this).siblings(".toggle-content");
+        if (toggleContent.css("display") == "none") {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
 
-      $(this).siblings(".toggle-content").slideToggle();
+        $(this).siblings(".toggle-content").slideToggle();
     });
 });
 </script>
 
-
 {{ section.settings.test_header }}
 
 {% schema %}
+
 {
     "name": "Product Detail Settings",
     "settings": [
-      {
-        "type": "product",
-        "id": "product",
-        "label": "Product"
-      }
+        {
+            "type": "product",
+            "id": "product_detail_product",
+            "label": "Product"
+        }, {
+            "type": "text",
+            "id": "product_detail_hero_background_video_url",
+            "label": "Hero background video url"
+        }, {
+            "type": "text",
+            "id": "product_detail_hero_headline",
+            "label": "Hero headline"
+        }, {
+            "type": "text",
+            "id": "product_features_headline",
+            "label": "Product features headline"
+        }, {
+            "type": "text",
+            "id": "product_banner_headline",
+            "label": "Product banner headline"
+        }, {
+            "type": "html",
+            "id": "product_banner_text",
+            "label": "Product banner text"
+        }, {
+            "type": "image_picker",
+            "id": "product_banner_image",
+            "label": "Product banner image"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "block-1",
+            "name": "Features Video",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "product_features_video_url",
+                    "label": "Features video url"
+                }, {
+                    "type": "text",
+                    "id": "product_features_video_title",
+                    "label": "Features video title"
+                }, {
+                    "type": "text",
+                    "id": "product_features_video_description",
+                    "label": "Features video description"
+                }
+            ]
+        }, {
+            "type": "block-2",
+            "name": "Product Feature",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "product_feature_image",
+                    "label": "Product feature image"
+                }, {
+                    "type": "text",
+                    "id": "product_feature_title",
+                    "label": "Product feature title"
+                }, {
+                    "type": "text",
+                    "id": "product_feature_description",
+                    "label": "Product feature description"
+                }
+            ]
+        }
     ]
-  }
+}
+
 {% endschema %}
