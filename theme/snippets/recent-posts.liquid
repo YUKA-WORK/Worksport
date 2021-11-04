@@ -4,7 +4,7 @@
             <a class="" href="{{ article.url }}">
                 <img src="{{ article.image.src | img_url: 'master' }}" alt="">
                 <div class="date">
-                    {{ article.published_at }}
+                    {{ article.published_at | date: "%b %d, %Y" }}
                 </div>
                 <h4>
                     {{ article.title }}
