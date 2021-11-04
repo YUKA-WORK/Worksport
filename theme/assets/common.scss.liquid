@@ -8,6 +8,20 @@
   top: 0;
   left: 0;
   width: 100%;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  * {
+    color: #fff !important;
+  }
+}
+
+.header__submenu {
+  background: black !important;
 }
 
 .page-width {
@@ -287,6 +301,108 @@ body a:hover {
   @include sp {
     display: block !important;
   }
+}
+
+/**********************************
+  *
+  * HEADER
+  *
+  **********************************/
+.hamburger-menu {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(150, 135, 235, 0.801);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+
+  .page-width {
+    @include flex-center-center();
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    @include flex-spacebetween-center();
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+  }
+
+  .container > * {
+    flex-basis: 50%;
+    padding: 5%;
+  }
+
+  .container .left-column {
+    background-color: rgba(255, 255, 0, 0.507);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .container .right-column {
+    background-color: rgba(0, 255, 191, 0.507);
+    @include flex-center-center();
+  }
+
+  .container .left-column .social-list {
+    width: 50%;
+  }
+
+  .container .left-column .social-list ul {
+    @include flex-start-center();
+    flex-wrap: wrap;
+
+    @include sp {
+      justify-content: space-between;
+    }
+  }
+
+  .container .left-column .social-list ul .list-social__item {
+    flex-basis: 10%;
+    padding: 0;
+    margin: 5%;
+  }
+
+  .container .left-column .social-list ul .list-social__item a {
+    padding: 0;
+  }
+
+  .container .left-column .social-list ul .list-social__item a .icon {
+    width: 100%;
+    height: 100%;
+    max-width: 30px;
+  }
+
+  .container .left-column .social-list ul .list-social__item a svg {
+    transform: none;
+  }
+
+  .container .left-column .social-list ul .list-social__item path {
+    fill: $white;
+  }
+
+  .container .right-column ul li {
+    margin-bottom: 20%;
+  }
+
+  .container .right-column ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  .container .right-column ul li a {
+    @include fluid(50, 30, font-size);
+    font-weight: 600;
+    line-height: 1.2;
+    color: $white;
+    text-transform: capitalize;
+  }
+}
+
+.hamburger-menu.active {
+  display: block;
 }
 
 /**********************************
@@ -865,7 +981,7 @@ button:focus {
     width: auto;
   }
 
-  .copyright .copyright__content {
+  .copyright .container * {
     opacity: 0.5;
     font-size: 12px;
     line-height: 1.67;
