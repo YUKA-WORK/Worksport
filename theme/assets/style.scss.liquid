@@ -187,6 +187,94 @@ $sp: 750px;
   * Home
   *
   **********************************/
+#index .hero-image {
+  .container {
+    background-color: rgba(44, 46, 52, 0.85);
+  }
+
+  .container .text-box .common-h-title-middle {
+    color: $white;
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .container .text-box .sub-text-wrapper {
+    @include fluid(70, 35, margin-bottom);
+  }
+
+  .container .text-box .sub-text-wrapper p {
+    color: $white;
+  }
+
+  .container .text-box .buttons-wrapper ul {
+    @include flex-start-center();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container .text-box .buttons-wrapper ul li:first-child {
+    @include fluid(50, 25, margin-right);
+
+    @include sp {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .explore-button-outer .shiny-button {
+    color: $blue !important;
+    background-color: $white !important;
+  }
+
+  .explore-button-outer .shiny-button:after {
+    border-top: 1.5px solid $blue;
+    border-left: 1.5px solid $blue;
+  }
+
+  .explore-button-outer .shiny-button:hover {
+    color: $white !important;
+    background-color: $blue !important;
+  }
+
+  .explore-button-outer .shiny-button:hover:after {
+    border-top: 1.5px solid $white;
+    border-left: 1.5px solid $white;
+  }
+
+  .play-video-button-outer {
+    background-color: transparent;
+    border: 3px solid $white;
+    padding: 0;
+  }
+
+  .play-video-button-outer:before,
+  .shiny-button-outer:after {
+    display: none !important;
+  }
+
+  .play-video-button-outer .shiny-button {
+    color: $white !important;
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .play-video-button-outer .shiny-button:after {
+    border-top: 1.5px solid $white;
+    border-left: 1.5px solid $white;
+  }
+
+  .play-video-button-outer .shiny-button:hover {
+    color: $white !important;
+    background-color: $black !important;
+  }
+
+  .play-video-button-outer .shiny-button:hover:after {
+    border-top: 1.5px solid $white;
+    border-left: 1.5px solid $white;
+  }
+}
+
 #index .find-brand {
   @include fluid(120, 60, margin-top);
 
@@ -1691,57 +1779,11 @@ $sp: 750px;
   *
   **********************************/
 #productDescription .hero-image {
-  position: relative;
-  height: 100vh;
-  margin-bottom: 0;
-
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-
-  .container {
-    position: relative;
-    z-index: 1;
-    width: 50%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
-    @include flex-center-center();
-
-    @include tab {
-      width: 100%;
-      height: 50%;
-    }
-  }
-
-  .container .text-box {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .container .text-box .product-name {
     line-height: 1;
     color: $black;
     @include fluid(60, 30, font-size);
     @include fluid(30, 15, margin-bottom);
-  }
-
-  .container .text-box .common-h-title-middle {
-    @include fluid(80, 40, margin-bottom);
-  }
-
-  .container .text-box .play-video-button-wrapper {
-    @include fluid(50, 25, margin-top);
-  }
-
-  .container .text-box .play-video-button-wrapper .play-video-button {
-    cursor: pointer;
   }
 }
 
@@ -1909,6 +1951,11 @@ $sp: 750px;
     @include sp {
       margin-bottom: 30px;
     }
+  }
+
+  .container > .left-column .product-detail-buy-button ul li .product-price *,
+  .container > .left-column .product-detail-buy-button ul li .free-delivery {
+    color: $white !important;
   }
 
   .container > .left-column h2 {
@@ -2182,6 +2229,43 @@ $sp: 750px;
     td {
     @include sp {
       padding: 2%;
+    }
+  }
+}
+
+#productDescription .product-detail-buy-button {
+  ul {
+    @include flex-spacebetween-center();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  ul li {
+    flex-basis: 50%;
+  }
+
+  ul li:first-child {
+    @include sp {
+      margin-bottom: 20px;
+    }
+  }
+
+  ul li .product-price *,
+  ul li .free-delivery {
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    color: $lightGray;
+  }
+
+  ul li .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    @include sp {
+      justify-content: flex-start;
     }
   }
 }

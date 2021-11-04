@@ -6,7 +6,7 @@
 
     <!-- Add/Edit in Admin Dashboard -->
     <section class="section hero-image">
-        <video autoplay loop muted class="background-video">
+        <video autoplay class="background-video" loop muted>
             <source src={{ section.settings.product_detail_hero_background_video_url }} type="video/mp4">
         </video>
 
@@ -19,27 +19,30 @@
                     {{ section.settings.product_detail_hero_headline }}
                 </h2>
 
-                {% include "product-detail-buy-button" product: product %}
-
-                <div class="shiny-button-outer play-video-button-wrapper">
-                    <a class="shiny-button play-video-button">Play Video</a>
+                <div class="sub-text-wrapper">
+                    {% include "product-detail-buy-button" product: product %}
                 </div>
 
+                <div class="buttons-wrapper">
+                    <div class="shiny-button-outer play-video-button-outer">
+                        <a class="shiny-button play-video-button">Play Video</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- The Modal -->
+    <!-- Modal -->
     <div id="customModal">
         <!-- Modal content -->
         <div class="modal-content">
             <div class="close"></div>
-            <video controls class="modal-video">
+            <video class="modal-video" controls>
                 <source src={{ section.settings.product_detail_hero_background_video_url }} type="video/mp4">
             </video>
         </div>
 
-        <!-- Modal Background -->
+        <!-- Modal background -->
         <div class="modal-background"></div>
     </div>
 
@@ -260,26 +263,6 @@
 
 <script>
   $(document).ready(function() {
-    /* Modal video */
-    $(".play-video-button").on(
-      "click",
-      function (event) {
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-
-        $("#customModal").addClass("show");
-      }
-    );
-
-    $(".modal-background").on("click", function () {
-      $("#customModal").removeClass("show");
-    });
-
-    $(".close").on("click", function () {
-      $("#customModal").removeClass("show");
-    });
-
-
     /* Play Features videos */
     PlayFeaturesVideos();
 

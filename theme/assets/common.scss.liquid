@@ -290,6 +290,43 @@ button:focus {
   outline: 0;
 }
 
+.shiny-button-outer {
+  background-color: #0588d6;
+  padding: 1.5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-button-outer:before {
+  content: "";
+  width: 60%;
+  height: 5.5px;
+  display: block;
+  background-color: #7ee9ff;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  z-index: 1;
+  box-shadow: 0px 0px 2px 2px #7ee9ff;
+}
+
+.shiny-button-outer:after {
+  content: "";
+  width: 70%;
+  height: 5.5px;
+  display: block;
+  background-color: #7ee9ff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+  z-index: 1;
+  box-shadow: 0px 0px 2px 2px #7ee9ff;
+}
+
 .shiny-button {
   color: $white !important;
   background-color: $blue !important;
@@ -354,43 +391,6 @@ button:focus {
     opacity: 0;
     left: 100%;
   }
-}
-
-.shiny-button-outer {
-  background-color: #0588d6;
-  padding: 1.5px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.shiny-button-outer:before {
-  content: "";
-  width: 60%;
-  height: 5.5px;
-  display: block;
-  background-color: #7ee9ff;
-  border-radius: 50%;
-  position: absolute;
-  top: -5px;
-  z-index: 1;
-  box-shadow: 0px 0px 2px 2px #7ee9ff;
-}
-
-.shiny-button-outer:after {
-  content: "";
-  width: 70%;
-  height: 5.5px;
-  display: block;
-  background-color: #7ee9ff;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -5px;
-  z-index: 1;
-  box-shadow: 0px 0px 2px 2px #7ee9ff;
 }
 
 /**********************************
@@ -484,6 +484,67 @@ button:focus {
 
   @include sp {
     margin-right: unset;
+  }
+}
+
+/**********************************
+  *
+  * HERO
+  *
+  **********************************/
+.hero-image {
+  position: relative;
+  min-height: unset;
+  height: 100vh;
+  margin-bottom: 0;
+
+  @include sp {
+    min-height: auto;
+    height: auto;
+  }
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    @include flex-center-center();
+
+    @include tab {
+      width: 100%;
+      height: 50%;
+    }
+  }
+
+  .container .text-box {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  .container .text-box .common-h-title-middle {
+    @include fluid(80, 40, margin-bottom);
+  }
+
+  .container .text-box .sub-text-wrapper {
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .container .text-box .buttons-wrapper .play-video-button {
+    cursor: pointer;
   }
 }
 
