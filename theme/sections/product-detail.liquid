@@ -6,7 +6,7 @@
 
     <!-- Add/Edit in Admin Dashboard -->
     <section class="section hero-image">
-        <video autoplay loop muted>
+        <video autoplay loop muted class="background-video">
             <source src={{ section.settings.product_detail_hero_background_video_url }} type="video/mp4">
         </video>
 
@@ -20,9 +20,28 @@
                 </h2>
 
                 {% include "product-detail-buy-button" product: product %}
+
+                <div class="shiny-button-outer play-video-button-wrapper">
+                    <a class="shiny-button play-video-button">Play Video</a>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- The Modal -->
+    <div id="customModal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="close"></div>
+            <video controls class="modal-video">
+                <source src={{ section.settings.product_detail_hero_background_video_url }} type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Modal Background -->
+        <div class="modal-background"></div>
+    </div>
 
     <!-- Add/Edit in Admin Dashboard -->
     <section class="section features-videos">
@@ -156,7 +175,7 @@
                 </p>
                 {% if product.metafields.custom_fields["installation_instructions_url"] != blank %}
                     <div class="download">
-                        <a target="_blank" href='{{ product.metafields.custom_fields["installation_instructions_url"] }}'>Download Installation Instructions</a>
+                        <a class="hover-opacity" target="_blank" href='{{ product.metafields.custom_fields["installation_instructions_url"] }}'>Download Installation Instructions</a>
                     </div>
                 {% endif %}
             </div>
@@ -241,8 +260,27 @@
 
 <script>
   $(document).ready(function() {
+    /* Modal video */
+    $(".play-video-button").on(
+      "click",
+      function (event) {
+        event.stopPropagation();
+        event.stopImmediatePropagation();
 
-    //Play Features videos
+        $("#customModal").addClass("show");
+      }
+    );
+
+    $(".modal-background").on("click", function () {
+      $("#customModal").removeClass("show");
+    });
+
+    $(".close").on("click", function () {
+      $("#customModal").removeClass("show");
+    });
+
+
+    /* Play Features videos */
     PlayFeaturesVideos();
 
     function PlayFeaturesVideos() {
@@ -328,7 +366,8 @@
         }
     }
 
-    //Technical Specifications toggle
+
+    /* Technical Specifications toggle */
     $(".speck .toggle-content").hide();
     $(".speck:first-child .toggle-button").addClass("active");
     $(".speck:first-child .toggle-content").slideToggle();
