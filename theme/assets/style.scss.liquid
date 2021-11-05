@@ -1793,6 +1793,33 @@ $sp: 750px;
     @include fluid(60, 30, font-size);
     @include fluid(30, 15, margin-bottom);
   }
+
+  .play-video-button-outer {
+    background-color: $black !important;
+    border: 3px solid $black;
+    padding: 0;
+  }
+
+  .play-video-button-outer:before,
+  .play-video-button-outer:after {
+    display: none !important;
+  }
+
+  .play-video-button-outer .shiny-button {
+    color: $white !important;
+    background-color: $black !important;
+    border: none !important;
+  }
+
+  .play-video-button-outer .shiny-button:after {
+    border-top: 1.5px solid $white;
+    border-left: 1.5px solid $white;
+  }
+
+  .play-video-button-outer .shiny-button:hover:after {
+    border-top: 1.5px solid $white;
+    border-left: 1.5px solid $white;
+  }
 }
 
 #productDescription .features-videos {
