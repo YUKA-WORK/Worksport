@@ -184,46 +184,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
     <script>
       $(document).ready(function() {
-        /*Hamburger Menu*/
-        $(".hamburger-menu-button").on(
-          "click",
-          function (event) {
-            event.stopPropagation();
-            event.stopImmediatePropagation();
+          /*Hamburger Menu*/
+          $("#hamburger").on(
+              "click",
+              function() {
+                  if (!$(".hamburger-menu").hasClass("active")) {
+                      $("#hamburger").addClass("active");
+                      $(".hamburger-menu").addClass("active");
+                  } else {
+                      $("#hamburger").removeClass("active");
+                      $(".hamburger-menu").removeClass("active");
+                  }
+              }
+          );
 
-            if(!$(".hamburger-menu").hasClass("active")){
-              $(".hamburger-menu").addClass("active");
-            }else{
-              $(".hamburger-menu").removeClass("active");
-            }
-          }
-        );
+          /*Set hight of hero and menu*/
+          var headerHight = $(".header-wrapper").innerHeight();
+          $("#MainContent").css("margin-top", headerHight);
+          $(".hero-image").css({
+              height: 'calc(100vh - ' + headerHight + 'px)'
+          });
+          $(".hamburger-menu").css({
+              height: 'calc(100vh - ' + headerHight + 'px)'
+          }).css("margin-top", headerHight);
 
-        /*Set hight of hero and menu*/
-        var headerHight = $(".header-wrapper").innerHeight();
-        $(".hero-image").css( { height: 'calc(100vh - ' + headerHight + 'px)' } ).css("margin-top", headerHight);
-        $(".hamburger-menu").css( { height: 'calc(100vh - ' + headerHight + 'px)' } ).css("margin-top", headerHight);
+          /* Modal video for hero*/
+          $(".play-video-button").on(
+              "click",
+              function(event) {
+                  event.stopPropagation();
+                  event.stopImmediatePropagation();
 
-        /* Modal video for hero*/
-        $(".play-video-button").on(
-          "click",
-          function (event) {
-            event.stopPropagation();
-            event.stopImmediatePropagation();
-    
-            $("#customModal").addClass("show");
-            $("#customModal .modal-video").trigger("play");
-          }
-        );
-    
-        $(".modal-background").on("click", function () {
-          $("#customModal").removeClass("show");
-        });
-    
-        $(".close").on("click", function () {
-          $("#customModal").removeClass("show");
-        });
-    });
+                  $("#customModal").addClass("show");
+                  $("#customModal .modal-video").trigger("play");
+              }
+          );
+
+          $(".modal-background").on("click", function() {
+              $("#customModal").removeClass("show");
+          });
+
+          $(".close").on("click", function() {
+              $("#customModal").removeClass("show");
+          });
+      });
     </script>
     
   </body>
