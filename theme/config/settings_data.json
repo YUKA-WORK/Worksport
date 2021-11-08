@@ -5,10 +5,15 @@
     "colors_accent_2": "#0076bd",
     "colors_text": "#2c2e34",
     "colors_outline_button_labels": "#2c2e34",
-    "colors_background_1": "#FFFFFF",
-    "colors_background_2": "#f1f3f4",
+    "colors_background_1": "#ffffff",
+    "gradient_background_1": "",
+    "colors_background_2": "#2c2e34",
     "type_header_font": "montserrat_n4",
     "type_body_font": "montserrat_n4",
+    "social_twitter_link": "https:\/\/twitter.com\/WorksportLtd",
+    "social_facebook_link": "https:\/\/www.facebook.com\/WorksportLtd\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/worksportltd\/",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCmZTPFel5WeDi38c2ilPHRg",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -31,35 +36,36 @@
       "header": {
         "type": "header",
         "settings": {
-          "color_scheme": "background-1",
-          "logo_width": 100,
+          "color_scheme": "background-2",
+          "logo": "shopify:\/\/shop_images\/WorksportLogoWhite_2x_52904032-2c48-4ee0-aae3-86fa28dab652.png",
+          "logo_width": 150,
           "logo_position": "middle-left",
           "menu": "main-menu",
-          "show_line_separator": true,
+          "show_line_separator": false,
           "enable_sticky_header": false
         }
       },
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-0": {
+          "8450c338-175c-41c9-9db2-9a018fa5e32b": {
             "type": "link_list",
             "settings": {
               "heading": "Quick links",
               "menu": "footer"
             }
           },
-          "footer-1": {
-            "type": "text",
+          "c026d4b3-af19-44c5-965c-c1cca3a7cec0": {
+            "type": "link_list",
             "settings": {
-              "heading": "Heading",
-              "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+              "heading": "Quick links",
+              "menu": "footer-menu2"
             }
           }
         },
         "block_order": [
-          "footer-0",
-          "footer-1"
+          "8450c338-175c-41c9-9db2-9a018fa5e32b",
+          "c026d4b3-af19-44c5-965c-c1cca3a7cec0"
         ],
         "settings": {
           "color_scheme": "background-1",

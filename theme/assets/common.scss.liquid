@@ -8,7 +8,7 @@ body .icon-arrow {
 }
 
 .page-width {
-  // background-color: #ffff0021;
+  background-color: #ffff0021;
   padding: 0 3rem !important;
 }
 
@@ -42,7 +42,6 @@ $blue: #0076bd;
   *
   s**********************************/
 $pc: 1920px;
-// $laptop: 1440px;
 $tab: 1024px;
 $sp: 750px;
 
@@ -51,12 +50,6 @@ $sp: 750px;
     @content;
   }
 }
-
-// @mixin laptop {
-//   @media (max-width: ($laptop)) {
-//     @content;
-//   }
-// }
 
 @mixin tab {
   @media (max-width: ($tab)) {
@@ -230,6 +223,7 @@ body {
 }
 
 body a {
+  text-decoration: none;
   transition: all 0.3s ease;
   color: $black;
 }
@@ -1063,5 +1057,103 @@ button:focus {
 
   * {
     text-align: left;
+  }
+}
+
+/**********************************
+  *
+  * MAIN PRODUCTS PAGE
+  *
+  **********************************/
+//filters wrapper
+.filters-wrapper {
+  margin-bottom: 50px;
+
+  @include sp {
+    margin-bottom: 10px;
+  }
+}
+
+.collection-grid-section {
+  background-color: rgba(135, 207, 235, 0.568);
+  @include sp {
+    display: block;
+  }
+}
+
+.main-products-container {
+  > .page-width {
+    @include flex-spacebetween-start();
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  #productFilters {
+    flex-basis: 20%;
+    background-color: rgba(235, 135, 227, 0.87);
+
+    @include sp {
+      margin-bottom: 50px;
+    }
+  }
+
+  #ProductGridContainer {
+    flex-basis: 80%;
+    background-color: rgba(235, 175, 135, 0.568);
+  }
+
+  #productFilters .facets__form .facets__heading {
+    padding-top: 1.5rem;
+    flex-basis: 100%;
+
+    @include sp {
+      padding-top: 0;
+    }
+  }
+
+  #productFilters .facets__form .product-count {
+    display: none;
+  }
+}
+
+// product grid
+ul.product-grid {
+  li.grid__item .card-wrapper {
+    opacity: 1;
+    transition: 0.3s ease all;
+  }
+
+  li.grid__item .card-wrapper:hover {
+    opacity: 0.85;
+    transition: 0.3s ease all;
+  }
+
+  li.grid__item .card--product {
+    background-color: #f8f9fa;
+    padding: 5%;
+  }
+
+  li.grid__item .card--product .media--transparent {
+    padding-bottom: 100% !important;
+  }
+
+  li.grid__item .card--product .media--transparent img {
+    height: auto;
+    max-height: unset;
+    object-fit: cover;
+    top: 50%;
+    transform: translateY(-50%) !important;
+  }
+
+  li.grid__item .card-information__wrapper .card-information__text {
+    @include fluid(20, 18, font-size);
+    font-weight: bold;
+  }
+
+  li.grid__item .card-information__wrapper .price {
+    @include fluid(18, 16, font-size);
+    font-weight: normal;
   }
 }

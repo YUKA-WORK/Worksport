@@ -162,8 +162,8 @@
 
 .facets__heading {
   display: block;
-  color: rgba(var(--color-foreground), 0.85);
-  font-size: 1.4rem;
+  color: #848484;
+  font-size: 1.6rem;
   margin: -1.5rem 2rem 0 0;
 }
 
@@ -245,7 +245,7 @@
 }
 
 .facets__item label,
-.facets__item input[type='checkbox'] {
+.facets__item input[type="checkbox"] {
   cursor: pointer;
 }
 
@@ -258,7 +258,7 @@
   word-break: break-word;
 }
 
-.facet-checkbox input[type='checkbox'] {
+.facet-checkbox input[type="checkbox"] {
   position: absolute;
   opacity: 1;
   width: 1.6rem;
@@ -284,7 +284,7 @@
   top: 1.4rem;
 }
 
-.facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark {
+.facet-checkbox > input[type="checkbox"]:checked ~ .icon-checkmark {
   visibility: visible;
 }
 
@@ -294,7 +294,7 @@
     border: 0.1rem solid rgb(var(--color-background));
   }
 
-  .facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark {
+  .facet-checkbox > input[type="checkbox"]:checked ~ .icon-checkmark {
     border: none;
   }
 }
@@ -770,7 +770,7 @@ input.mobile-facets__checkbox {
   visibility: hidden;
 }
 
-.mobile-facets__label > input[type='checkbox']:checked ~ .icon-checkmark {
+.mobile-facets__label > input[type="checkbox"]:checked ~ .icon-checkmark {
   visibility: visible;
 }
 
