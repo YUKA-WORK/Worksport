@@ -21,7 +21,9 @@
 }
 
 @media screen and (min-width: 750px) {
-  .header-wrapper:not(.header-wrapper--border-bottom) + cart-notification .cart-notification {
+  .header-wrapper:not(.header-wrapper--border-bottom)
+    + cart-notification
+    .cart-notification {
     border-top-width: 0.1rem;
   }
 
@@ -79,7 +81,7 @@
   align-items: flex-start;
   display: flex;
   padding-bottom: 3rem;
-  padding-top: 2rem;
+  padding-top: 5rem;
 }
 
 .cart-notification-product dl {
