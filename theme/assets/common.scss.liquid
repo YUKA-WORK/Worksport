@@ -8,7 +8,7 @@ body .icon-arrow {
 }
 
 .page-width {
-  background-color: #ffff0021;
+  // background-color: #ffff0021;
   padding: 0 3rem !important;
 }
 
@@ -468,6 +468,149 @@ body a:hover {
 
 /**********************************
   *
+  * FOOTER
+  *
+  **********************************/
+.footer {
+  background: $black;
+  @include fluid(100, 50, padding-top);
+  @include fluid(60, 50, padding-bottom);
+
+  .container {
+    @include flex-spacebetween-center();
+    align-items: stretch;
+    @include fluid(40, 20, margin-bottom);
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .container .column {
+    padding-left: 4%;
+    padding-right: 4%;
+    border-right: solid 2px #7a8c90;
+
+    @include sp {
+      padding-left: 0%;
+      padding-right: 0%;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      border-right: none;
+      border-bottom: solid 2px #7a8c90;
+    }
+  }
+
+  .container .column.left {
+    flex-basis: 25%;
+    padding-left: 0%;
+
+    @include sp {
+      padding-top: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .container .column.middle {
+    flex-basis: 37.5%;
+
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
+  .container .column.right {
+    flex-basis: 37.5%;
+    padding-right: 0%;
+  }
+
+  .container .column.right {
+    border-right: none;
+
+    @include sp {
+      border-bottom: none;
+    }
+  }
+
+  .column.left .site-logo {
+    @include fluid(100, 50, margin-bottom);
+  }
+
+  .column.left .site-logo img {
+    width: 80%;
+    max-width: 240px;
+
+    @include sp {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .column.left .social-list ul .list-social__item a .icon {
+    max-width: 40px;
+  }
+
+  .column.middle .menus {
+    @include flex-spacebetween-start();
+  }
+
+  .column.middle .menus ul:first-child {
+    margin-right: 2.5%;
+  }
+
+  .column.middle .menus ul:last-child {
+    margin-left: 2.5%;
+  }
+
+  .column.middle .menus ul li {
+    @include fluid(20, 10, margin-bottom);
+  }
+
+  .column.middle .menus ul li a {
+    @include fluid(16, 13, font-size);
+    line-height: 1.5;
+    color: $white;
+  }
+
+  .column.right h3 {
+    @include fluid(30, 20, font-size);
+    font-weight: bold;
+    line-height: 1.33;
+    color: $white;
+    @include fluid(20, 10, margin-bottom);
+  }
+
+  .column.right h3 + p {
+    @include fluid(16, 13, font-size);
+    font-weight: 600;
+    line-height: 1.63;
+    color: $white;
+    @include fluid(30, 15, margin-bottom);
+  }
+
+  .copyright {
+    @include flex-center-center();
+  }
+
+  .copyright .copyright__content {
+    width: auto;
+  }
+
+  .copyright .container * {
+    opacity: 0.5;
+    font-size: 12px;
+    line-height: 1.67;
+    text-align: center;
+    color: #f1f3f4 !important;
+  }
+
+  * {
+    text-align: left;
+  }
+}
+
+/**********************************
+  *
   * BUTTON
   *
   **********************************/
@@ -794,6 +937,7 @@ button:focus {
 #customModal .modal-content video {
   max-height: 90vh;
   width: auto;
+  max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -924,149 +1068,6 @@ button:focus {
 
 /**********************************
   *
-  * FOOTER
-  *
-  **********************************/
-.footer {
-  background: $black;
-  @include fluid(100, 50, padding-top);
-  @include fluid(60, 50, padding-bottom);
-
-  .container {
-    @include flex-spacebetween-center();
-    align-items: stretch;
-    @include fluid(40, 20, margin-bottom);
-
-    @include sp {
-      display: block;
-    }
-  }
-
-  .container .column {
-    padding-left: 4%;
-    padding-right: 4%;
-    border-right: solid 2px #7a8c90;
-
-    @include sp {
-      padding-left: 0%;
-      padding-right: 0%;
-      padding-top: 30px;
-      padding-bottom: 30px;
-      border-right: none;
-      border-bottom: solid 2px #7a8c90;
-    }
-  }
-
-  .container .column.left {
-    flex-basis: 25%;
-    padding-left: 0%;
-
-    @include sp {
-      padding-top: 0;
-      margin-bottom: 30px;
-    }
-  }
-
-  .container .column.middle {
-    flex-basis: 37.5%;
-
-    @include sp {
-      margin-bottom: 30px;
-    }
-  }
-
-  .container .column.right {
-    flex-basis: 37.5%;
-    padding-right: 0%;
-  }
-
-  .container .column.right {
-    border-right: none;
-
-    @include sp {
-      border-bottom: none;
-    }
-  }
-
-  .column.left .site-logo {
-    @include fluid(100, 50, margin-bottom);
-  }
-
-  .column.left .site-logo img {
-    width: 80%;
-    max-width: 240px;
-
-    @include sp {
-      width: 100%;
-      max-width: 100%;
-    }
-  }
-
-  .column.left .social-list ul .list-social__item a .icon {
-    max-width: 40px;
-  }
-
-  .column.middle .menus {
-    @include flex-spacebetween-start();
-  }
-
-  .column.middle .menus ul:first-child {
-    margin-right: 2.5%;
-  }
-
-  .column.middle .menus ul:last-child {
-    margin-left: 2.5%;
-  }
-
-  .column.middle .menus ul li {
-    @include fluid(20, 10, margin-bottom);
-  }
-
-  .column.middle .menus ul li a {
-    @include fluid(16, 13, font-size);
-    line-height: 1.5;
-    color: $white;
-  }
-
-  .column.right h3 {
-    @include fluid(30, 20, font-size);
-    font-weight: bold;
-    line-height: 1.33;
-    color: $white;
-    @include fluid(20, 10, margin-bottom);
-  }
-
-  .column.right h3 + p {
-    @include fluid(16, 13, font-size);
-    font-weight: 600;
-    line-height: 1.63;
-    color: $white;
-    @include fluid(30, 15, margin-bottom);
-  }
-
-  .copyright {
-    @include flex-center-center();
-  }
-
-  .copyright .copyright__content {
-    width: auto;
-  }
-
-  .copyright .container * {
-    opacity: 0.5;
-    font-size: 12px;
-    line-height: 1.67;
-    text-align: center;
-    color: #f1f3f4 !important;
-  }
-
-  * {
-    text-align: left;
-  }
-}
-
-/**********************************
-  *
   * MAIN PRODUCTS PAGE
   *
   **********************************/
@@ -1080,7 +1081,6 @@ button:focus {
 }
 
 .collection-grid-section {
-  background-color: rgba(135, 207, 235, 0.568);
   @include sp {
     display: block;
   }
@@ -1097,7 +1097,6 @@ button:focus {
 
   #productFilters {
     flex-basis: 20%;
-    background-color: rgba(235, 135, 227, 0.87);
 
     @include sp {
       margin-bottom: 50px;
@@ -1106,7 +1105,6 @@ button:focus {
 
   #ProductGridContainer {
     flex-basis: 80%;
-    background-color: rgba(235, 175, 135, 0.568);
   }
 
   #productFilters .facets__form .facets__heading {
@@ -1160,5 +1158,12 @@ ul.product-grid {
   li.grid__item .card-information__wrapper .price {
     @include fluid(18, 16, font-size);
     font-weight: normal;
+  }
+}
+
+// search
+.template-search {
+  .product-count {
+    display: none;
   }
 }
