@@ -232,6 +232,10 @@ body a:hover {
   transition: all 0.3s ease;
 }
 
+main {
+  margin-top: 80px;
+}
+
 .light-gray {
   color: #848484;
 }
@@ -767,6 +771,17 @@ button:focus {
   @include fluid(150, 75, margin-bottom);
 }
 
+/*scroll animation*/
+.effect {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.effect.fadeIn {
+  opacity: 1 !important;
+  transition: all 0.3s ease-in-out;
+}
+
 .full-width {
   width: 100%;
   max-width: 100%;
@@ -776,7 +791,6 @@ button:focus {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  // background-color: rgba(135, 207, 235, 0.486);
 }
 
 .half-width-left {
