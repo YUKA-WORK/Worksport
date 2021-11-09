@@ -629,6 +629,7 @@ $sp: 750px;
   background-color: $offWhite;
   min-height: 50vh;
   @include flex-center-center();
+  margin-top: 0 !important;
   margin-bottom: 0;
   position: relative;
 
@@ -944,8 +945,6 @@ $sp: 750px;
   *
   **********************************/
 #blog .blog-posts {
-  @include fluid(200, 100, margin-top);
-
   .common-h-title-middle {
     text-align: center;
     @include fluid(100, 50, margin-bottom);
@@ -1122,7 +1121,6 @@ $sp: 750px;
   *
   **********************************/
 #article .article {
-  @include fluid(200, 100, margin-top);
   @include fluid(30, 15, margin-bottom);
 
   .page-width {
@@ -1300,8 +1298,6 @@ $sp: 750px;
   *
   **********************************/
 #contact .contact-form {
-  @include fluid(200, 100, margin-top);
-
   .container {
     @include flex-spacebetween-start();
 
@@ -1394,8 +1390,6 @@ $sp: 750px;
   *
   **********************************/
 #support .here-to-help {
-  @include fluid(200, 100, margin-top);
-
   .container {
     @include flex-spacebetween-start();
 
@@ -1720,8 +1714,6 @@ $sp: 750px;
   *
   **********************************/
 #productsOverview .explore {
-  @include fluid(200, 100, margin-top);
-
   .page-width {
     max-width: 800px;
   }
@@ -2377,24 +2369,23 @@ $sp: 750px;
   *
   **********************************/
 #faq .faq {
-  @include fluid(200, 100, margin-top);
-
   .common-h-title-middle {
     @include fluid(50, 25, margin-bottom);
   }
 
   .common-h-title-middle + p {
-    font-size: 16px;
-    font-weight: 16;
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
     line-height: 1.5;
+    color: $lightGray;
   }
 
-  .faq-wrapper .question .title {
+  .container .question .title {
     @include fluid(22, 18, font-size);
     font-weight: bold;
   }
 
-  .faq-wrapper .answer .p {
+  .container .answer .p {
     font-size: 16px;
   }
 }

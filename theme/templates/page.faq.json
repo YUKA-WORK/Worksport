@@ -2,6 +2,34 @@
   "sections": {
     "faq": {
       "type": "faq",
+      "blocks": {
+        "a73b2428-c5ea-4c66-bf3c-91d516e5bf98": {
+          "type": "questions_and_answers",
+          "settings": {
+            "title": "What is...?",
+            "faq_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+          }
+        },
+        "a45816b4-79f1-4dda-9660-364e1d2f0cb4": {
+          "type": "questions_and_answers",
+          "settings": {
+            "title": "Do you have...?",
+            "faq_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+          }
+        },
+        "1db92155-eb9a-489f-b9f1-5996360c3b58": {
+          "type": "questions_and_answers",
+          "settings": {
+            "title": "How long....?",
+            "faq_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+          }
+        }
+      },
+      "block_order": [
+        "a73b2428-c5ea-4c66-bf3c-91d516e5bf98",
+        "a45816b4-79f1-4dda-9660-364e1d2f0cb4",
+        "1db92155-eb9a-489f-b9f1-5996360c3b58"
+      ],
       "settings": {}
     }
   },

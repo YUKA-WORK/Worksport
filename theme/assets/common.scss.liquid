@@ -768,6 +768,7 @@ button:focus {
   **********************************/
 .section {
   width: 100%;
+  @include fluid(200, 100, margin-top);
   @include fluid(150, 75, margin-bottom);
 }
 
@@ -838,6 +839,7 @@ button:focus {
   position: relative;
   min-height: 100vh;
   margin-bottom: 0;
+  margin-top: 0 !important;
 
   video {
     position: absolute;
@@ -1200,5 +1202,30 @@ ul.product-grid {
   .button[name="checkout"] {
     background-color: $white;
     color: $black;
+  }
+}
+
+/**********************************
+  *
+  * Policy page common
+  *
+  **********************************/
+.policy-page-common {
+  .common-h-title-middle {
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .common-h-title-middle + p {
+    @include fluid(20, 16, font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    color: $lightGray;
+  }
+
+  .container {
+    @include fluid(100, 50, margin-top);
+    @include fluid(100, 50, margin-bottom);
+    background: #f7f7f7;
+    padding: 5%;
   }
 }
