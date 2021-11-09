@@ -425,6 +425,12 @@ $sp: 750px;
     }
   }
 
+  .products-container .collections ul li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   .products-container .collections ul li:first-child {
     margin-right: 2%;
 
@@ -450,7 +456,7 @@ $sp: 750px;
     padding: 10%;
   }
 
-  .products-container .collections ul li .collection-title a {
+  .products-container .collections ul li .collection-title h4 {
     position: relative;
     font-size: 30px;
     @include fluid(30, 20, font-size);
@@ -465,7 +471,7 @@ $sp: 750px;
     @include flex-center-center();
   }
 
-  .products-container .collections ul li .collection-title a:after {
+  .products-container .collections ul li .collection-title h4:after {
     display: inline-block;
     @include fluid(15, 10, width);
     @include fluid(15, 10, height);
@@ -1714,8 +1720,10 @@ $sp: 750px;
   *
   **********************************/
 #productsOverview .explore {
+  @include fluid(200, 100, margin-top);
+
   .page-width {
-    max-width: 630px;
+    max-width: 800px;
   }
 
   .common-h-title-middle {
@@ -1735,9 +1743,13 @@ $sp: 750px;
 
   ul {
     @include flex-start-center();
+    padding-right: 5%;
+    padding-left: 5%;
 
     @include sp {
       flex-wrap: wrap;
+      padding-right: 0;
+      padding-left: 0;
     }
   }
 
