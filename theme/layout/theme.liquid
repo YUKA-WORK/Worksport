@@ -184,6 +184,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
     <script>
       $(document).ready(function () {
+        /*Open external links in a new tab*/
+        var links = document.links;
+        for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
+          if (links[i].hostname !== window.location.hostname) {
+            links[i].target = '_blank';
+            links[i].rel = 'noreferrer noopener';
+          }
+        }
+
         /*Scroll animation*/
         var windowBottom = $(this).scrollTop() + $(this).innerHeight();
         var windowHalfInnerHeight = $(window).height() - $(window).height()/4;
@@ -202,7 +211,7 @@
           })
           .scroll();
     
-        /*Hamburger Menu*/
+        /*Hamburger menu*/
         $("#hamburger").on("click", function () {
           if (!$(".hamburger-menu").hasClass("active")) {
             $("#hamburger").addClass("active");
