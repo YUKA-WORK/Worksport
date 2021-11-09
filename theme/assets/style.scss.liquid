@@ -2370,3 +2370,31 @@ $sp: 750px;
     }
   }
 }
+
+/**********************************
+  *
+  * FAQ
+  *
+  **********************************/
+#faq .faq {
+  @include fluid(200, 100, margin-top);
+
+  .common-h-title-middle {
+    @include fluid(50, 25, margin-bottom);
+  }
+
+  .common-h-title-middle + p {
+    font-size: 16px;
+    font-weight: 16;
+    line-height: 1.5;
+  }
+
+  .faq-wrapper .question .title {
+    @include fluid(22, 18, font-size);
+    font-weight: bold;
+  }
+
+  .faq-wrapper .answer .p {
+    font-size: 16px;
+  }
+}

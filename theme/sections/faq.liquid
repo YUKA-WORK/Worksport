@@ -1,0 +1,58 @@
+<div id="faq">
+    <section class="section effect faq">
+        <div class="page-width">
+            <h2 class="common-h-title-middle">
+                Frequently Asked Questions
+            </h2>
+            <p>
+                If you don’t find the answer to your question below, feel free to contact us and we’ll get back to you as soon as possible.
+            </p>
+
+            <div class="faq-wrapper">
+                <ul>
+                    {%- for block in section.blocks -%}
+                        <li>
+                            <div class="question">
+                                <h4 class="title">
+                                    {{block.settings.title}}
+                                </h4>
+                            </div>
+                            <div class="answer">
+                                <p>
+                                    {{block.settings.faq_answer}}
+                                </p>
+                            </div>
+                        </li>
+
+                    {%- endfor -%}
+                </ul>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+{% schema %}
+{
+    "blocks": [
+      {
+        "type": "questions_and_answers",
+        "name": "FAQ",
+        "settings": [
+            {
+                "id": "title",
+                "type": "text",
+                "label": "Question"
+            },
+            {
+                "type": "html",
+                "id": "faq_answer",
+                "label": "Answer"
+            }
+        ]
+      }
+    ]
+  }
+
+
+{% endschema %}
