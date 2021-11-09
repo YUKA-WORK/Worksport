@@ -14,9 +14,17 @@
   outline: none;
 }
 
-.list-menu__item--active {
+.list-menu__item {
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.8rem;
+  transition: 0.3s all ease;
+}
+
+.list-menu__item:hover,
+.list-menu__item--active {
+  text-decoration-color: #ffffff;
+  transition: 0.3s all ease;
 }
 
 .list-menu--disclosure.localization-selector {
