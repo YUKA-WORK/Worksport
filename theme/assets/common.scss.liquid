@@ -768,8 +768,11 @@ button:focus {
   **********************************/
 .section {
   width: 100%;
-  @include fluid(200, 100, margin-top);
   @include fluid(150, 75, margin-bottom);
+}
+
+.section:first-child {
+  @include fluid(200, 100, margin-top);
 }
 
 /*scroll animation*/
