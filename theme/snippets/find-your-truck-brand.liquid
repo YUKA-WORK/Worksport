@@ -1,0 +1,202 @@
+{{ 'truck-brand-data-json.js' | asset_url | script_tag }}
+
+<div class="find-your-truck-brand">
+
+    <!-- Select Brand -->
+    <div id="brand">
+        <div class="brand-logo">
+            <input checked id="ford" name="brand" type="radio" value="FORD" />
+            <label for="ford">
+                <div class="img-bg ford">
+                    <img alt="" class="lazyload" data-src={{ "ford.svg" | asset_url }} />
+                </div>
+            </label>
+        </div>
+        <div class="brand-logo">
+            <input id="ram" name="brand" type="radio" value="RAM" />
+            <label for="ram">
+                <div class="img-bg ram">
+                    <img alt="" class="lazyload" data-src={{ "ram.svg" | asset_url }} />
+                </div>
+            </label>
+        </div>
+        <div class="brand-logo">
+            <input id="gmc" name="brand" type="radio" value="GMC" />
+            <label for="gmc">
+                <div class="img-bg gmc">
+                    <img alt="" class="lazyload" data-src={{ "gmc.svg" | asset_url }} />
+                </div>
+            </label>
+        </div>
+        <div class="brand-logo">
+            <input id="toyota" name="brand" type="radio" value="TOYOTA" />
+            <label for="toyota">
+                <div class="img-bg toyota">
+                    <img alt="" class="lazyload" data-src={{ "toyota.svg" | asset_url }} />
+                </div>
+            </label>
+        </div>
+        <div class="brand-logo">
+            <input id="nissan" name="brand" type="radio" value="NISSAN" />
+            <label for="nissan">
+                <div class="img-bg nissan">
+                    <img alt="" class="lazyload" data-src={{ "nissan.svg" | asset_url }} />
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <div class="year-model-wrapper">
+        <!-- Select Year -->
+        <div id="year">
+            <select>
+                <option disabled selected value="">-- Select Year --</option>
+            </select>
+        </div>
+
+        <!-- Select Model -->
+        <div id="model">
+            <select>
+                <option disabled selected value="">-- Select Model --</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="result">
+        <ul class="products-list">
+            {% for product in collections.all-panel-covers.products %}
+
+            <li data-product={{ product.title | remove:" " }} class="product">
+                <div class="product-wrapper">
+                    <a class="product-link" href="/pages/{{ product.title | replace: " ", "-"}}"></a>
+                    <img class="product-img" src="{{ product.featured_image | img_url: '300x300' }}"
+                        alt="{{ product.featured_image.alt }}" />
+                    <h2 class="product-title">{{product.title}}</h2>
+                    <h3 class="product-short-description">
+                        {{product.metafields.my_fields.product_short_description}}
+                    </h3>
+                    <div class="shiny-button-outer">
+                        <a class="shiny-button" href="/pages/{{ product.title | replace: " ", "-"}}">Shop
+                            {{product.title}}</a>
+                    </div>
+                </div>
+            </li>
+            {% endfor%}
+        </ul>
+
+        <div class="message">No results found</div>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function (e) {
+        let selectedBrand;
+        let selectedYear;
+        let selectedModel;
+        let selectedBrandData;
+        const productList = $("#result ul li");
+        const yearSelect = $("#year select");
+        const modelSelect = $("#model select");
+
+        initAll("FORD");
+
+        function initAll(brand) {
+            selectedBrand = brand;
+            selectedYear = yearSelect.val("");
+            selectedModel = modelSelect.val("");
+            selectedBrandData = data[brand];
+
+            productList.hide();
+            $(".message").hide();
+
+            yearSelect.empty().append(` <option disabled selected value=""> -- Select Year -- </option>`);
+
+            const array = [];
+
+            for (let d in selectedBrandData) {
+                let carData = selectedBrandData[d];
+
+                if (array.includes(carData.Year)) {
+                    continue;
+                }
+
+                array.push(carData.Year);
+
+                yearSelect.append(`<option value='${
+                    carData.Year
+                    }'>${
+                    carData.Year
+                    }</option>`);
+            }
+
+            modelSelect.empty().append(` <option disabled selected value=""> -- Select Model -- </option>`);
+
+            for (let d in selectedBrandData) {
+                let carData = selectedBrandData[d];
+
+                modelSelect.append(`<option value='${
+                    carData.UPC
+                    }'>${
+                    carData.UPC
+                    }</option>`);
+            }
+        }
+
+        $("#brand input").on("change", function () {
+            selectedBrand = $("#brand input[name=\"brand\"]:checked").val();
+            initAll(selectedBrand);
+        });
+
+        yearSelect.on("change", function () {
+            productList.hide();
+
+            selectedYear = Number(yearSelect.find("option:selected").val());
+
+            modelSelect.empty().append(` <option disabled selected value=""> -- Select Model -- </option>`);
+
+            for (let d in selectedBrandData) {
+                let carData = selectedBrandData[d];
+
+                if (carData.Year === selectedYear) {
+                    modelSelect.append(`<option value='${
+                        carData.UPC
+                        }'>${
+                        carData.UPC
+                        }</option>`);
+                }
+            }
+        });
+
+        modelSelect.on("change", function () {
+            filterProducts();
+        });
+
+        function filterProducts() {
+            productList.hide();
+            let noResults = true;
+
+            selectedModel = Number(modelSelect.find("option:selected").val());
+
+            for (let d in selectedBrandData) {
+                let carData = selectedBrandData[d];
+
+                if (selectedModel === carData.UPC) {
+                    noResults = false;
+                    $(".message").hide();
+
+                    productList.each(function () {
+                        if (carData.Products.includes($(this).data("product"))) {
+                            $(this).show();
+                            console.log("h");
+                        }
+                    });
+                }
+            }
+
+            if (noResults) {
+                $(".message").show();
+            }
+        }
+    });
+</script>

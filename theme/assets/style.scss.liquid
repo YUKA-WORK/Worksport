@@ -2311,7 +2311,7 @@ $sp: 750px;
     .cf-widget-item
     table
     td {
-    @include fluid(16, 13, font-size);
+    @include fluid(16, 14, font-size);
   }
 
   .cf-widget-application-lists .tab-contents-container .cf-widget-item table th,
@@ -2387,5 +2387,147 @@ $sp: 750px;
 
   .container .answer .p {
     font-size: 16px;
+  }
+}
+/**********************************
+  *
+  * FIND YOUR TRUCK BRAND
+  *
+  **********************************/
+.find-your-truck-brand #brand {
+  background-color: rgba(250, 128, 114, 0.521);
+  @include flex-spacebetween-center();
+
+  .brand-logo {
+    background-color: aqua;
+  }
+
+  .brand-logo input {
+    display: none;
+  }
+
+  .brand-logo label {
+    cursor: pointer;
+  }
+
+  .brand-logo label .img-bg {
+    background-color: $lightGray;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: 0.3s all ease;
+  }
+
+  .brand-logo label .img-bg.ford {
+    -webkit-mask: url("ford.svg") no-repeat center;
+    mask: url("ford.svg") no-repeat center;
+  }
+
+  .brand-logo label .img-bg.ram {
+    -webkit-mask: url("ram.svg") no-repeat center;
+    mask: url("ram.svg") no-repeat center;
+  }
+
+  .brand-logo label .img-bg.gmc {
+    -webkit-mask: url("gmc.svg") no-repeat center;
+    mask: url("gmc.svg") no-repeat center;
+  }
+
+  .brand-logo label .img-bg.toyota {
+    -webkit-mask: url("toyota.svg") no-repeat center;
+    mask: url("toyota.svg") no-repeat center;
+  }
+
+  .brand-logo label .img-bg.nissan {
+    -webkit-mask: url("nissan.svg") no-repeat center;
+    mask: url("nissan.svg") no-repeat center;
+  }
+
+  .brand-logo label .img-bg img {
+    opacity: 0;
+  }
+
+  .brand-logo input:checked + label .img-bg,
+  .brand-logo input:hover + label .img-bg {
+    background-color: $blue;
+    transition: 0.3s all ease;
+  }
+}
+
+.find-your-truck-brand .year-model-wrapper {
+  background-color: pink;
+  @include fluid(100, 50, margin-top);
+  @include fluid(100, 50, margin-bottom);
+  @include flex-center-center();
+
+  @include sp {
+    display: block;
+  }
+}
+
+.find-your-truck-brand #result {
+  .products-list {
+    @include flex-start-start();
+    align-items: stretch;
+    background-color: yellow;
+    flex-wrap: wrap;
+
+    @include sp {
+      display: block;
+    }
+  }
+
+  .products-list > .product {
+    flex-basis: 23%;
+    margin: 1%;
+
+    @include tab {
+      flex-basis: 48%;
+    }
+
+    @include sp {
+      margin: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .products-list > .product .product-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 8%;
+    background-color: $offWhite;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    @include sp {
+      padding: 5%;
+    }
+  }
+
+  .products-list > .product .product-wrapper .product-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .products-list > .product .product-img {
+    @include fluid(20, 10, margin-bottom);
+  }
+
+  .products-list > .product .product-title {
+    @include fluid(18, 16, font-size);
+    font-weight: 600;
+    @include fluid(20, 10, margin-bottom);
+  }
+
+  .products-list > .product .product-short-description {
+    @include fluid(16, 14, font-size);
+    font-weight: normal;
+    @include fluid(40, 20, margin-bottom);
   }
 }

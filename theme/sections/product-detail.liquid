@@ -15,7 +15,7 @@
                     {{product.title}}
                 </div>
                 <h2 class="common-h-title-middle">
-                    {{ section.settings.product_detail_hero_headline }}
+                    {{product.metafields.my_fields.product_short_description}}
                 </h2>
 
                 <div class="sub-text-wrapper">
@@ -385,10 +385,6 @@
             "type": "text",
             "id": "product_detail_hero_background_video_url",
             "label": "Hero background video url"
-        }, {
-            "type": "text",
-            "id": "product_detail_hero_headline",
-            "label": "Hero headline"
         }, {
             "type": "text",
             "id": "product_features_headline",

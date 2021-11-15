@@ -571,7 +571,7 @@ main {
   }
 
   .column.middle .menus ul li a {
-    @include fluid(16, 13, font-size);
+    @include fluid(16, 14, font-size);
     line-height: 1.5;
     color: $white;
   }
@@ -585,7 +585,7 @@ main {
   }
 
   .column.right h3 + p {
-    @include fluid(16, 13, font-size);
+    @include fluid(16, 14, font-size);
     font-weight: 600;
     line-height: 1.63;
     color: $white;
@@ -667,7 +667,6 @@ button:focus {
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
-  padding: 10px 40px;
   border: solid 1.5px $blue !important;
   overflow: hidden;
   box-shadow: 0 0 0 0 transparent;
@@ -675,6 +674,11 @@ button:focus {
   text-decoration: none;
   transition: 0.3s all ease;
   display: inline-block;
+  white-space: nowrap;
+  @include fluid(10, 5, padding-top);
+  @include fluid(10, 5, padding-bottom);
+  @include fluid(40, 20, padding-right);
+  @include fluid(40, 20, padding-left);
 }
 
 .shiny-button:before {
