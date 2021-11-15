@@ -2395,12 +2395,7 @@ $sp: 750px;
   *
   **********************************/
 .find-your-truck-brand #brand {
-  background-color: rgba(250, 128, 114, 0.521);
   @include flex-spacebetween-center();
-
-  .brand-logo {
-    background-color: aqua;
-  }
 
   .brand-logo input {
     display: none;
@@ -2421,26 +2416,31 @@ $sp: 750px;
   .brand-logo label .img-bg.ford {
     -webkit-mask: url("ford.svg") no-repeat center;
     mask: url("ford.svg") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
   .brand-logo label .img-bg.ram {
     -webkit-mask: url("ram.svg") no-repeat center;
     mask: url("ram.svg") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
   .brand-logo label .img-bg.gmc {
     -webkit-mask: url("gmc.svg") no-repeat center;
     mask: url("gmc.svg") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
   .brand-logo label .img-bg.toyota {
     -webkit-mask: url("toyota.svg") no-repeat center;
     mask: url("toyota.svg") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
   .brand-logo label .img-bg.nissan {
     -webkit-mask: url("nissan.svg") no-repeat center;
     mask: url("nissan.svg") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
   .brand-logo label .img-bg img {
@@ -2455,7 +2455,6 @@ $sp: 750px;
 }
 
 .find-your-truck-brand .year-model-wrapper {
-  background-color: pink;
   @include fluid(100, 50, margin-top);
   @include fluid(100, 50, margin-bottom);
   @include flex-center-center();
@@ -2463,13 +2462,41 @@ $sp: 750px;
   @include sp {
     display: block;
   }
+
+  #year,
+  #model {
+    margin: 0 20px;
+    @include flex-center-center();
+  }
+
+  #year {
+    @include sp {
+      margin-bottom: 20px;
+    }
+  }
+
+  .select-common {
+    min-width: 170px;
+    padding: 10px 40px;
+    outline: 1px solid $blue;
+    border: none;
+    color: $blue;
+    border-radius: 5px;
+    cursor: pointer;
+    background: url("down-arrow-blue.svg") no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    -moz-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
 }
 
 .find-your-truck-brand #result {
   .products-list {
     @include flex-start-start();
     align-items: stretch;
-    background-color: yellow;
     flex-wrap: wrap;
 
     @include sp {
