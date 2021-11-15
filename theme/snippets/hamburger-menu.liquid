@@ -9,7 +9,7 @@
                     <ul role="list">
                         {% for link in linklists.main-menu2.links %}
                             <li {%- if link.current %} class="current-link" {% endif %}>
-                                <a href="{{ link.url }}">{{ link.title }}</a>
+                                <a href="{{ link.url }}"><span class="arrow"></span><span class="link-title">{{ link.title }}</span></a>
                             </li>
                         {% endfor %}
                     </ul>

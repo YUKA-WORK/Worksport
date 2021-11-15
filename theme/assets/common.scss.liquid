@@ -376,20 +376,45 @@ main {
   }
 
   .container .right-column ul li a {
+    @include flex-start-center();
     @include fluid(50, 30, font-size);
     font-weight: 600;
     line-height: 1.2;
     color: $white;
     text-transform: capitalize;
     position: relative;
-    border-bottom: 3px solid transparent;
     padding-bottom: 10px;
+    position: relative;
     transition: 0.3s ease all;
   }
 
-  .container .right-column ul li.current-link a,
-  .container .right-column ul li a:hover {
-    border-color: $white;
+  .container .right-column ul li a .arrow {
+    content: "";
+    display: block;
+    border-top: 2px solid $white;
+    border-left: 2px solid $white;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    transform: rotate(135deg);
+    opacity: 0;
+    transition: 0.3s ease all;
+  }
+
+  .container .right-column ul li.current-link a .arrow,
+  .container .right-column ul li a:hover .arrow {
+    opacity: 1;
+    transition: 0.3s ease all;
+  }
+
+  .container .right-column ul li a .link-title {
+    transform: translateX(0);
+    transition: 0.3s ease all;
+  }
+
+  .container .right-column ul li.current-link a .link-title,
+  .container .right-column ul li a:hover .link-title {
+    transform: translateX(50px);
     transition: 0.3s ease all;
   }
 }
