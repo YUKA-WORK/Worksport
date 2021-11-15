@@ -185,15 +185,15 @@
     <script>
       $(document).ready(function () {
         /*Change styles of header submenu item*/
-        $(".custom-header-submenu > li > a").each(function(){
-          if($(this).data("title")==="SC3"){
-            $(this).find(".child-link").replaceWith( "SC<b>3</b>" );
-          }else if ($(this).data("title")==="SC3Pro"){
-            $(this).find(".child-link").replaceWith( "SC<b>3</b><small>Pro</small>" );
-          }else if ($(this).data("title")==="SC4"){
-            $(this).find(".child-link").replaceWith( "SC<b>4</b>" );
-          }else if ($(this).data("title")==="TC3"){
-            $(this).find(".child-link").replaceWith( "TC<b>4</b>" );
+        $(".cover-product-title").each(function(){
+          if ($(this).data("cover-product-title")==="SC3"){
+            $(this).find(".cover-product-title-inner").replaceWith( "SC<b>3</b>" );
+          }else if ($(this).data("cover-product-title")==="SC3Pro"){
+            $(this).find(".cover-product-title-inner").replaceWith( "SC<b>3</b><small>Pro</small>" );
+          }else if ($(this).data("cover-product-title")==="SC4"){
+            $(this).find(".cover-product-title-inner").replaceWith( "SC<b>4</b>" );
+          }else if ($(this).data("cover-product-title")==="TC3"){
+            $(this).find(".cover-product-title-inner").replaceWith( "TC<b>4</b>" );
           }
         })
 
