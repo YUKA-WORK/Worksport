@@ -344,9 +344,21 @@ main {
     right: -100vw;
   }
 
-  .custom-header-submenu > li a {
+  .custom-header-submenu > li a,
+  .custom-header-submenu > li a * {
     color: $black !important;
     @include fluid(20, 16, font-size);
+    line-height: 1;
+  }
+
+  .custom-header-submenu > li a[data-title="SC3Pro"] small {
+    font-size: 60%;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: auto;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    color: $lightGray !important;
   }
 }
 
