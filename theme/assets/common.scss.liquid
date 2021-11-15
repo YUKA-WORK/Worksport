@@ -311,6 +311,43 @@ main {
   .header .header__icons {
     margin-left: auto;
   }
+
+  .custom-header-submenu {
+    width: 100%;
+    background-color: $offWhite;
+    position: relative;
+    @include flex-start-center();
+    margin: 0;
+    padding: 5px 0;
+    position: fixed;
+    top: 80px;
+    border: none;
+    transform: translateY(0) !important;
+  }
+
+  .custom-header-submenu:before,
+  .custom-header-submenu:after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-color: $offWhite;
+    position: absolute;
+    top: 0;
+  }
+
+  .custom-header-submenu:before {
+    left: -100vw;
+  }
+
+  .custom-header-submenu:after {
+    right: -100vw;
+  }
+
+  .custom-header-submenu > li a {
+    color: $black !important;
+    @include fluid(20, 16, font-size);
+  }
 }
 
 @media screen and (max-width: 989px) {

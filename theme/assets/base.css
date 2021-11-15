@@ -2212,22 +2212,22 @@ details[open] > .header__icon--menu .icon-hamburger {
 }
 
 .header__menu-item span {
-  text-decoration: underline;
-  text-decoration-color: transparent;
+  /* text-decoration: underline; */
+  /* text-decoration-color: transparent; */
   text-underline-offset: 0.8rem;
   transition: 0.3s all ease;
 }
 
 .header__menu-item:hover span {
-  text-decoration-color: #ffffff;
+  /* text-decoration-color: #ffffff; */
   transition: 0.3s all ease;
 }
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.8rem;
+  /* text-decoration: underline; */
+  /* text-underline-offset: 0.8rem; */
 }
 
 .header__menu-item:hover .header__active-menu-item {
