@@ -598,7 +598,7 @@ $sp: 750px;
 
 #index .quiz {
   .container {
-    @include flex-spacebetween-start();
+    @include flex-spacebetween-center();
 
     @include sp {
       display: block;
@@ -618,13 +618,6 @@ $sp: 750px;
     }
   }
 
-  .container > .right-column {
-    padding-left: 5%;
-
-    @include sp {
-      padding-left: 0;
-    }
-  }
   .container > .left-column .small-text {
     font-size: 16px;
     font-weight: bold;
