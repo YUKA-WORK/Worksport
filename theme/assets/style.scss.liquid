@@ -534,16 +534,35 @@ $sp: 750px;
     flex-basis: 29.333%;
     margin-left: 2%;
     margin-right: 2%;
+    transform: translateY(40px);
 
     @include sp {
       margin-bottom: 50px;
       margin-left: 0;
       margin-right: 0;
+      transform: none !important;
+      transition-delay: unset !important;
     }
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  .container ul li.first {
+    transition-delay: 0.2s;
+  }
+
+  .container ul li.second {
+    transition-delay: 0.4s;
+  }
+
+  .container ul li.third {
+    transition-delay: 0.6s;
+  }
+
+  .container ul li.fadeIn {
+    transform: translateY(0);
   }
 
   .container ul li img {
