@@ -14,6 +14,7 @@
     "social_facebook_link": "https:\/\/www.facebook.com\/WorksportLtd\/",
     "social_instagram_link": "https:\/\/www.instagram.com\/worksportltd\/",
     "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCmZTPFel5WeDi38c2ilPHRg",
+    "favicon": "shopify:\/\/shop_images\/favicon-worksport2.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
