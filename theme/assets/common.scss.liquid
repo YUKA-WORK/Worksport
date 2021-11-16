@@ -964,10 +964,21 @@ button:focus {
     min-height: 100vh;
     background-color: rgba(255, 255, 255, 0.75);
     @include flex-center-center();
+    opacity: 0;
+    transform: translateY(50%);
+    transition: 1s ease all;
+    transition-delay: 1s;
 
     @include tab {
       width: 100%;
     }
+  }
+
+  .container.fadeInUp {
+    -webkit-animation: fadeInUp 1s ease-in-out; /* Chrome, Safari, Opera */
+    animation: fadeInUp 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
   }
 
   .container .text-box {
@@ -988,6 +999,31 @@ button:focus {
 
   .container .text-box .buttons-wrapper .play-video-button {
     cursor: pointer;
+  }
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+/* Standard syntax */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
