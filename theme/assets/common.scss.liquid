@@ -312,6 +312,16 @@ main {
     margin-left: auto;
   }
 
+  .header__inline-menu > .list-menu > li details summary svg {
+    transform: rotate(0);
+    transition: 0.3s ease all;
+  }
+
+  .header__inline-menu > .list-menu > li details[open] summary svg {
+    transform: rotate(180deg);
+    transition: 0.3s ease all;
+  }
+
   .custom-header-submenu {
     width: 100%;
     background-color: $offWhite;
