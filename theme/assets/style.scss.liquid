@@ -2275,25 +2275,59 @@ $sp: 750px;
     margin-left: -3%;
   }
 
-  .cf-widget-application-lists .tab-labels .cf-tab img {
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg {
+    background-color: $lightGray;
     width: 100%;
+    height: 100%;
+    display: block;
+    transition: 0.3s all ease;
     cursor: pointer;
   }
 
-  .cf-widget-application-lists .tab-labels .cf-tab img.first {
-    display: inline-block !important;
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg.ford {
+    -webkit-mask: url("ford.svg") no-repeat center;
+    mask: url("ford.svg") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
-  .cf-widget-application-lists .tab-labels .cf-tab img.second {
-    display: none !important;
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg.ford {
+    -webkit-mask: url("ford.svg") no-repeat center;
+    mask: url("ford.svg") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
-  .cf-widget-application-lists .tab-labels .cf-tab.active img.first {
-    display: none !important;
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg.ram {
+    -webkit-mask: url("ram.svg") no-repeat center;
+    mask: url("ram.svg") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
-  .cf-widget-application-lists .tab-labels .cf-tab.active img.second {
-    display: inline-block !important;
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg.gmc {
+    -webkit-mask: url("gmc.svg") no-repeat center;
+    mask: url("gmc.svg") no-repeat center;
+    -webkit-mask-size: contain;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg.toyota {
+    -webkit-mask: url("toyota.svg") no-repeat center;
+    mask: url("toyota.svg") no-repeat center;
+    -webkit-mask-size: contain;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg.nissan {
+    -webkit-mask: url("nissan.svg") no-repeat center;
+    mask: url("nissan.svg") no-repeat center;
+    -webkit-mask-size: contain;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab.active .img-bg,
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg:hover {
+    background-color: $blue;
+    transition: 0.3s all ease;
+  }
+
+  .cf-widget-application-lists .tab-labels .cf-tab .img-bg img {
+    opacity: 0;
   }
 
   .cf-widget-application-lists .tab-contents-container .cf-widget-item h3 {
