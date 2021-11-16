@@ -511,7 +511,7 @@ $sp: 750px;
 
   .common-h-title-regular {
     text-align: center;
-    @include fluid(100, 50, margin-bottom);
+    @include fluid(50, 25, margin-bottom);
   }
 }
 
@@ -1582,14 +1582,16 @@ $sp: 750px;
     flex-basis: 50%;
   }
 
+  .container > .left-column {
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
   .container > .left-column .product__title {
     @include fluid(50, 30, font-size);
     font-weight: bold;
     line-height: 1.6;
-
-    @include sp {
-      margin-bottom: 30px;
-    }
   }
 
   .container > .right-column {
