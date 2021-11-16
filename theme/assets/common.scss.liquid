@@ -286,6 +286,25 @@ main {
 
 /**********************************
   *
+  * Product name (cover) - SC3, SC3Pro, SC4, TC3
+  *
+  **********************************/
+.cover-product-title b {
+  font-weight: bold;
+}
+
+.cover-product-title[data-cover-product-title="SC3Pro"] small {
+  font-size: 60% !important;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: auto;
+  margin-left: 1px;
+  margin-bottom: 1px;
+  color: $lightGray !important;
+}
+
+/**********************************
+  *
   * HEADER
   *
   **********************************/
@@ -373,16 +392,6 @@ main {
     color: $black !important;
     @include fluid(20, 16, font-size);
     line-height: 1;
-  }
-
-  .custom-header-submenu > li a[data-cover-product-title="SC3Pro"] small {
-    font-size: 60%;
-    font-style: italic;
-    font-weight: bold;
-    margin-top: auto;
-    margin-left: 1px;
-    margin-bottom: 1px;
-    color: $lightGray !important;
   }
 }
 

@@ -12,8 +12,13 @@
         <div class="container">
             <div class="text-box">
                 <div class="product-name">
-                    {{product.title}}
+                    <div class="cover-product-title" data-cover-product-title="{{ product.title | replace: ' ', '' }}">
+                        <span class="cover-product-title-inner">
+                            {{product.title}}
+                        </span>
+                    </div>
                 </div>
+
                 <h2 class="common-h-title-middle">
                     {{product.metafields.my_fields.product_short_description}}
                 </h2>
