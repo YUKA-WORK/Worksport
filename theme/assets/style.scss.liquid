@@ -297,6 +297,8 @@ $sp: 750px;
 }
 
 #index .features {
+  margin-bottom: 0;
+
   .container {
     @include flex-spacebetween-start();
     align-items: stretch;
@@ -374,6 +376,8 @@ $sp: 750px;
 }
 
 #index .products {
+  @include fluid(150, 75, padding-top);
+
   .common-h-title-large {
     @include fluid(200, 100, margin-bottom);
   }

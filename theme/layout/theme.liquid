@@ -211,7 +211,7 @@
 
         /*Scroll animation*/
         var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-        var windowHalfInnerHeight = $(window).height() - $(window).height()/4;
+        var windowHalfInnerHeight = $(window).height() - $(window).height()/5;
     
         $(window)
           .scroll(function () {
@@ -226,6 +226,15 @@
             });
           })
           .scroll();
+
+        /*Smooth scroll*/
+        $(document).on('click', 'a[href^="#"]', function (event) {
+          event.preventDefault();
+
+          $('html, body').animate({
+              scrollTop: $($.attr(this, 'href')).offset().top
+          }, 500);
+        });
     
         /*Hamburger menu*/
         $("#hamburger").on("click", function () {
