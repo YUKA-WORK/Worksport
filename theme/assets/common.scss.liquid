@@ -1373,9 +1373,42 @@ ul.product-grid {
 
 /**********************************
   *
-  * JudgeMe app
+  * Pagination
   *
   **********************************/
+.pagination {
+  .pagination__item {
+    position: relative;
+    z-index: 0;
+    font-size: 15px !important;
+  }
+
+  .pagination__item-arrow svg {
+    color: $blue !important;
+    height: 1rem !important;
+  }
+
+  .pagination__item:before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .pagination__item--current:before {
+    background-color: #d9dfe0;
+  }
+
+  .pagination__item:after {
+    display: none !important;
+  }
+}
 
 /**********************************
   *
