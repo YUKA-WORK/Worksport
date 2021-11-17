@@ -95,6 +95,7 @@
             <h2 class="common-h-title-large">
                 {{ section.settings.product_features_headline }}
             </h2>
+
             {% include "product-detail-buy-button" product: product %}
 
             <div class="product-features-list">
@@ -266,113 +267,113 @@
 </div>
 
 <script>
-  $(document).ready(function() {
-    /* Play Features videos */
-    PlayFeaturesVideos();
-
-    function PlayFeaturesVideos() {
-
-        var currentNum;
-        var currentTabContent;
-        var currentTabItem;
-        var currentVideo;
-        var numOfVideos = $(".video-tabs-content-wrapper .video").length;
-        var clicked = false;
-
-        videoInit(1);
-
-        function videoInit(num) {
-            currentNum = num;
-            currentTabContent = $(".video-tab-content[data-num='" + num + "']");
-            currentTabItem = $(".video-tab-item[data-num='" + num + "']")
-            currentVideo = currentTabContent.find(".video");
-
-            videoPlay();
-        }
-
-        function videoPlay() {
-            $(".video-tab-description").hide();
-
-            currentTabContent.addClass("active");
-            currentTabItem.addClass("active");
-            currentTabItem.find(".video-tab-description").slideToggle("normal");
-            currentVideo.trigger("play");
-
-            $(currentVideo).on("ended", function() {
-                if ((!clicked) && currentNum < numOfVideos) {
-                    currentTabContent.removeClass("active");
-                    currentTabItem.removeClass("active");
-                    currentNum++;
-
-                    videoInit(currentNum);
-                }
-            });
-        };
-
-        $(".video-tab-title-text").on("click", function(event) {
-            event.stopPropagation();
-            event.stopImmediatePropagation();
-
-            videoClicked($(this).data("num"));
-        });
-
-        $(".video").on("click", function() {
-            videoClicked($(this).data("num"));
-        });
-
-        function videoClicked(num) {
-            clicked = true;
-
-            var clickedNum = num;
-            var clickedTabContent = $(".video-tab-content[data-num='" + clickedNum + "']");
-            var clickedTabItem = $(".video-tab-item[data-num='" + clickedNum + "']")
-            var clickedVideo = clickedTabContent.find(".video");
-
-            $(".video").attr("loop", true);
-
-            if (clickedTabItem.hasClass("active")) {
-                if (clickedVideo.get(0).paused) {
-                    clickedVideo.trigger("play");
-                } else {
-                    clickedVideo.trigger("pause");
-                }
-            } else {
-                $(".video-tab-description").hide();
-                $(".video-tab-content").removeClass("active");
-                $(".video-tab-item").removeClass("active");
-                $(".video").each(function() {
-                    $(this).get(0).pause();
-                    $(this).get(0).currentTime = 0;
-                });
-
-                clickedTabContent.addClass("active");
-                clickedTabItem.addClass("active");
-                clickedTabItem.find(".video-tab-description").slideToggle("normal");
-                clickedVideo.trigger("play");
-            }
-        }
-    }
-
-
-    /* Technical Specifications toggle */
-    $(".speck .toggle-content").hide();
-    $(".speck:first-child .toggle-button").addClass("active");
-    $(".speck:first-child .toggle-content").slideToggle();
-
-    $(".toggle-button").on("click", function(event) {
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-
-        var toggleContent = $(this).siblings(".toggle-content");
-        if (toggleContent.css("display") == "none") {
-            $(this).addClass("active");
-        } else {
-            $(this).removeClass("active");
-        }
-
-        $(this).siblings(".toggle-content").slideToggle();
-    });
-});
+	$(document).ready(function() {
+	  /* Play features videos */
+	  PlayFeaturesVideos();
+	
+	  function PlayFeaturesVideos() {
+	
+	      var currentNum;
+	      var currentTabContent;
+	      var currentTabItem;
+	      var currentVideo;
+	      var numOfVideos = $(".video-tabs-content-wrapper .video").length;
+	      var clicked = false;
+	
+	      videoInit(1);
+	
+	      function videoInit(num) {
+	          currentNum = num;
+	          currentTabContent = $(".video-tab-content[data-num='" + num + "']");
+	          currentTabItem = $(".video-tab-item[data-num='" + num + "']")
+	          currentVideo = currentTabContent.find(".video");
+	
+	          videoPlay();
+	      }
+	
+	      function videoPlay() {
+	          $(".video-tab-description").hide();
+	
+	          currentTabContent.addClass("active");
+	          currentTabItem.addClass("active");
+	          currentTabItem.find(".video-tab-description").slideToggle("normal");
+	          currentVideo.trigger("play");
+	
+	          $(currentVideo).on("ended", function() {
+	              if ((!clicked) && currentNum < numOfVideos) {
+	                  currentTabContent.removeClass("active");
+	                  currentTabItem.removeClass("active");
+	                  currentNum++;
+	
+	                  videoInit(currentNum);
+	              }
+	          });
+	      };
+	
+	      $(".video-tab-title-text").on("click", function(event) {
+	          event.stopPropagation();
+	          event.stopImmediatePropagation();
+	
+	          videoClicked($(this).data("num"));
+	      });
+	
+	      $(".video").on("click", function() {
+	          videoClicked($(this).data("num"));
+	      });
+	
+	      function videoClicked(num) {
+	          clicked = true;
+	
+	          var clickedNum = num;
+	          var clickedTabContent = $(".video-tab-content[data-num='" + clickedNum + "']");
+	          var clickedTabItem = $(".video-tab-item[data-num='" + clickedNum + "']")
+	          var clickedVideo = clickedTabContent.find(".video");
+	
+	          $(".video").attr("loop", true);
+	
+	          if (clickedTabItem.hasClass("active")) {
+	              if (clickedVideo.get(0).paused) {
+	                  clickedVideo.trigger("play");
+	              } else {
+	                  clickedVideo.trigger("pause");
+	              }
+	          } else {
+	              $(".video-tab-description").hide();
+	              $(".video-tab-content").removeClass("active");
+	              $(".video-tab-item").removeClass("active");
+	              $(".video").each(function() {
+	                  $(this).get(0).pause();
+	                  $(this).get(0).currentTime = 0;
+	              });
+	
+	              clickedTabContent.addClass("active");
+	              clickedTabItem.addClass("active");
+	              clickedTabItem.find(".video-tab-description").slideToggle("normal");
+	              clickedVideo.trigger("play");
+	          }
+	      }
+	  }
+	
+	
+	  /* Technical specifications toggle */
+	  $(".speck .toggle-content").hide();
+	  $(".speck:first-child .toggle-button").addClass("active");
+	  $(".speck:first-child .toggle-content").slideToggle();
+	
+	  $(".toggle-button").on("click", function(event) {
+	      event.stopPropagation();
+	      event.stopImmediatePropagation();
+	
+	      var toggleContent = $(this).siblings(".toggle-content");
+	      if (toggleContent.css("display") == "none") {
+	          $(this).addClass("active");
+	      } else {
+	          $(this).removeClass("active");
+	      }
+	
+	      $(this).siblings(".toggle-content").slideToggle();
+	  });
+	});
 </script>
 
 {{ section.settings.test_header }}

@@ -1,14 +1,13 @@
 /**********************************
-  *
-  * CUSTOM STYLES FOR base.css
-  *
-  **********************************/
+*
+* CUSTOM STYLES (overwrite base.css)
+*
+**********************************/
 body .icon-arrow {
   width: 2rem;
 }
 
 .page-width {
-  // background-color: #ffff0021;
   padding: 0 3rem !important;
 }
 
@@ -25,10 +24,10 @@ body .icon-arrow {
 }
 
 /**********************************
-  *
-  * VARIABLES
-  *
-  **********************************/
+*
+* VARIABLES
+*
+**********************************/
 $black: #2c2e34;
 $white: #ffffff;
 $offWhite: #f1f3f4;
@@ -37,10 +36,10 @@ $lightGray: #848484;
 $blue: #0076bd;
 
 /**********************************
-  *
-  * MIXIN -MEDIA QUERY-
-  *
-  s**********************************/
+*
+* MIXIN -MEDIA QUERY-
+*
+s**********************************/
 $pc: 1920px;
 $tab: 1024px;
 $sp: 750px;
@@ -64,10 +63,10 @@ $sp: 750px;
 }
 
 /**********************************
-  *
-  * MIXIN -FUNCTIONS-
-  *
-  **********************************/
+*
+* MIXIN -FUNCTIONS-
+*
+**********************************/
 // How to fluid() function
 // $max - value on 1920 screen
 // $min - value on 414 screen
@@ -202,10 +201,10 @@ $sp: 750px;
 }
 
 /**********************************
-  *
-  * COMMON
-  *
-  **********************************/
+*
+* COMMON
+*
+**********************************/
 body {
   position: relative;
   width: 100%;
@@ -285,10 +284,10 @@ main {
 }
 
 /**********************************
-  *
-  * Product name (cover) - SC3, SC3Pro, SC4, TC3
-  *
-  **********************************/
+*
+*  STYLES FOR PRODUCT NAMES - SC3, SC3Pro, SC4, TC3
+*
+**********************************/
 .cover-product-title b {
   font-weight: bold;
 }
@@ -304,10 +303,10 @@ main {
 }
 
 /**********************************
-  *
-  * HEADER
-  *
-  **********************************/
+*
+* HEADER
+*
+**********************************/
 .header-wrapper {
   position: fixed;
   top: 0;
@@ -578,10 +577,10 @@ main {
 }
 
 /**********************************
-  *
-  * FOOTER
-  *
-  **********************************/
+*
+* FOOTER
+*
+**********************************/
 .footer {
   background: $black;
   @include fluid(100, 50, padding-top);
@@ -721,10 +720,10 @@ main {
 }
 
 /**********************************
-  *
-  * BUTTON
-  *
-  **********************************/
+*
+* BUTTON
+*
+**********************************/
 button:focus {
   outline: 0;
 }
@@ -837,10 +836,10 @@ button:focus {
 }
 
 /**********************************
-  *
-  * HEADING
-  *
-  **********************************/
+*
+* HEADING
+*
+**********************************/
 .common-h-title-small {
   color: $black;
   @include fluid(40, 24, font-size);
@@ -873,10 +872,10 @@ button:focus {
 }
 
 /**********************************
-  *
-  * SECTION
-  *
-  **********************************/
+*
+* SECTION
+*
+**********************************/
 .section {
   width: 100%;
   @include fluid(150, 75, margin-bottom);
@@ -886,7 +885,7 @@ button:focus {
   @include fluid(200, 100, margin-top);
 }
 
-/*scroll animation*/
+/*for scroll animation*/
 .effect {
   opacity: 0;
   transition: all 0.3s ease-in-out;
@@ -945,10 +944,10 @@ button:focus {
 }
 
 /**********************************
-  *
-  * HERO
-  *
-  **********************************/
+*
+* HERO
+*
+**********************************/
 .hero-image {
   position: relative;
   min-height: 100vh;
@@ -1037,10 +1036,10 @@ button:focus {
 }
 
 /**********************************
-  *
-  * MODAL
-  *
-  **********************************/
+*
+* MODAL
+*
+**********************************/
 /* modal background */
 #customModal .modal-background {
   display: none;
@@ -1115,11 +1114,10 @@ button:focus {
 }
 
 /**********************************
-  *
-  * Newsletter Banner
-  *
-  **********************************/
-
+*
+* NEWSLETTER BANNER
+*
+**********************************/
 .newsletter-banner1 {
   background-image: linear-gradient(115deg, #78a6c3 1%, #0076bd 55%);
   @include fluid(150, 75, padding-top);
@@ -1180,10 +1178,10 @@ button:focus {
 }
 
 /**********************************
-  *
-  * Others
-  *
-  **********************************/
+*
+* HOVER EFFECT
+*
+**********************************/
 .hover-opacity {
   opacity: 1;
   transition: 0.3s opacity ease;
@@ -1195,10 +1193,10 @@ button:focus {
 }
 
 /**********************************
-  *
-  * social list
-  *
-  **********************************/
+*
+* SOCIAL LIST
+*
+**********************************/
 .social-list ul {
   @include flex-start-center();
   flex-wrap: wrap;
@@ -1233,11 +1231,10 @@ button:focus {
 }
 
 /**********************************
-  *
-  * MAIN PRODUCTS PAGE
-  *
-  **********************************/
-//filters wrapper
+*
+* MAIN PRODUCTS PAGE
+*
+**********************************/
 .filters-wrapper {
   margin-bottom: 50px;
 
@@ -1287,7 +1284,6 @@ button:focus {
   }
 }
 
-// product grid
 ul.product-grid {
   li.grid__item .card-wrapper {
     opacity: 1;
@@ -1327,7 +1323,6 @@ ul.product-grid {
   }
 }
 
-// search
 .template-search {
   .product-count {
     display: none;
@@ -1335,10 +1330,10 @@ ul.product-grid {
 }
 
 /**********************************
-  *
-  * Cart notification
-  *
-  **********************************/
+*
+* CART NOTIFICATION
+*
+**********************************/
 #cart-notification {
   * {
     color: $white;
@@ -1356,10 +1351,10 @@ ul.product-grid {
 }
 
 /**********************************
-  *
-  * Policy page common
-  *
-  **********************************/
+*
+* POLICY PAGE [COMMON]
+*
+**********************************/
 .policy-page-common {
   .common-h-title-middle {
     @include fluid(50, 25, margin-bottom);
@@ -1381,10 +1376,10 @@ ul.product-grid {
 }
 
 /**********************************
-  *
-  * Pagination
-  *
-  **********************************/
+*
+* PAGINATION
+*
+**********************************/
 .pagination {
   .pagination__item {
     position: relative;
@@ -1420,10 +1415,10 @@ ul.product-grid {
 }
 
 /**********************************
-  *
-  * JudgeMe app
-  *
-  **********************************/
+*
+* JUDGEME APP
+*
+**********************************/
 .jdgm-carousel {
   .jdgm-carousel__arrows {
     margin-top: 50px;

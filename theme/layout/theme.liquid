@@ -184,7 +184,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
     <script>
       $(document).ready(function () {
-        /*Change styles of product name [SC3, SC3Pro, SC4, TC3]*/
+        /*Change styles of product names [SC3, SC3Pro, SC4, TC3]*/
         $(".cover-product-title").each(function(){
           if ($(this).data("cover-product-title")==="SC3"){
             $(this).find(".cover-product-title-inner").replaceWith( "SC<b>3</b>" );
@@ -196,7 +196,7 @@
             $(this).find(".cover-product-title-inner").replaceWith( "TC<b>3</b>" );
           }
         })
-
+      
         /*Open external links in a new tab*/
         var links = document.links;
         for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
@@ -205,14 +205,14 @@
             links[i].rel = 'noreferrer noopener';
           }
         }
-
+      
         /*Hero image animation*/
         $(".hero-image .container").addClass("fadeInUp");
-
+      
         /*Scroll animation*/
         var windowBottom = $(this).scrollTop() + $(this).innerHeight();
         var windowHalfInnerHeight = $(window).height() - $(window).height()/5;
-    
+      
         $(window)
           .scroll(function () {
             var currentPos = $(document).scrollTop();
@@ -226,16 +226,16 @@
             });
           })
           .scroll();
-
+      
         /*Smooth scroll*/
         $(document).on('click', 'a[href^="#"]', function (event) {
           event.preventDefault();
-
+      
           $('html, body').animate({
               scrollTop: $($.attr(this, 'href')).offset().top
           }, 500);
         });
-    
+      
         /*Hamburger menu*/
         $("#hamburger").on("click", function () {
           if (!$(".hamburger-menu").hasClass("active")) {
@@ -246,7 +246,7 @@
             $(".hamburger-menu").removeClass("active");
           }
         });
-    
+      
         /*Set hight of hero and menu*/
         var headerHight = $(".header-wrapper").innerHeight();
         $("#MainContent").css("margin-top", headerHight);
@@ -256,20 +256,20 @@
         $(".hamburger-menu").css({
           height: "calc(100vh - " + headerHight + "px)"
         }).css("margin-top", headerHight);
-    
-        /* Modal video for hero*/
+      
+        /*Modal video for hero*/
         $(".play-video-button").on("click", function (event) {
           event.stopPropagation();
           event.stopImmediatePropagation();
-    
+      
           $("#customModal").addClass("show");
           $("#customModal .modal-video").trigger("play");
         });
-    
+      
         $(".modal-background").on("click", function () {
           $("#customModal").removeClass("show");
         });
-    
+      
         $(".close").on("click", function () {
           $("#customModal").removeClass("show");
         });
